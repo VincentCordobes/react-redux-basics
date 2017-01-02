@@ -26,7 +26,7 @@ L’API des composants est très simple. Un composant *peut* posséder :
 -   des propriétés: les données d’entrées du composant →
     **props**
 -   Une méthode **render** chargée du rendu du composant, appelée
-    lorsque l’état ou une de ses propriété changent.
+    lorsque son *state* ou une de ses *props* changent.
 -   Des méthodes liées au cycle de vie du composant componentDidMount,
     componentWillReceiveProps etc..)
 
