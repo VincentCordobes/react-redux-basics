@@ -410,7 +410,7 @@ c'est à dire des données ne pouvant pas être obtenues à partir d'autres donn
 Les états dérivés (calculés) ne doivent pas être présents dans le *state*.
 
 
-<p align="center"><img src="https://www.dropbox.com/s/aj8zj878ivnf7n6/selectors0.svg?dl=1" width="250"></p>
+<p align="center"><img src="https://www.dropbox.com/s/aj8zj878ivnf7n6/selectors0.svg?dl=1" width="260"></p>
 
 On a donc la méthode `render` chargée de filtrer la liste et de l’afficher. 
 Ainsi, si  un critère de recherche ou si les données changent,
