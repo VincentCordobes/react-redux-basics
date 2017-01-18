@@ -334,6 +334,7 @@ Le code ci-dessous est **mauvais** 👿, en effet un même composant **ne devrai
 
 Il n'y a aucune séparation entre la vue et les traitements et ce type de code peut très vite s'avérer désordre.
 
+#####❌ Un "mauvais" composant :
 ```javascript
 class TrackList extends React.Component {
   state = { tracks: [] }
@@ -356,9 +357,10 @@ class TrackList extends React.Component {
   }
 }
 ```
-<h6 align="center">❌ Un "mauvais" composant</h6>
 
 Nous pouvons le séparer en 2 composants, le premier étant un **container component** et le deuxieme un **presentational component**.
+
+#####✅ Container component :
 
 ```javascript
 // LOgic is here!! 
@@ -380,9 +382,9 @@ class TrackListContainer extends React.Component {
   }
 }
 ```
-<h6 align="center">✅ Container component</h6>
 
 
+#####✅ Presentational component : 
 ```javascript
 // here is our view
 const TrackList = ({ tracks }) => (
@@ -393,7 +395,6 @@ const TrackList = ({ tracks }) => (
   </ul>
 )
 ```
-<h6 align="center">✅ Presentational component</h6>
 
 Selectors
 -----------
