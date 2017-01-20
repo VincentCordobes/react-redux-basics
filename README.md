@@ -262,6 +262,7 @@ Ce middleware permet de traiter les **actions** étant des **fonctions** (appel�
 Une action *thunk* ne doit pas forcément être pure et peut avoir des effets
 de bords. Les fonctions *dispatch* et *getState* du store lui sont passé en argument, ce qui lui donne la possibilité de *dispatcher* d'autres *actions* et d'accéder au *state*.
 
+##### Exemple d’un thunk action creator qui retourne une function :
 ```javascript
 function whatIsMyName() {
   return async (dispatch, getState) => {
@@ -276,7 +277,6 @@ function whatIsMyName() {
   }
 }
 ```
-<h6 align="center">Exemple d’un thunk action creator qui retourne une function</h6>
 
 L’exemple ci-dessus met en évidence une *action creator* qui retourne
 une fonction. Des actions marquant le début, le succès ou une erreur de
