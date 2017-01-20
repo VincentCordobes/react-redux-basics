@@ -115,8 +115,8 @@ Les différentes composantes de ce schéma sont expliquées dans la suite de ce 
 <p align="center"><img src="https://www.dropbox.com/s/eoqyq874z957s4i/synoptique.svg?dl=1" width="500"></p>
 <h6 align="center" >Synoptique technique React-Redux</h6>
 
-Ps: Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et patterns (immutabilités, flux unidirectionel etc..)
-et ses principes sous-jacents peuvent parfaitement s'appliquer à d'autres architectures.
+> Note : Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et patterns (immutabilités, flux unidirectionel etc..)
+> et ses principes sous-jacents peuvent parfaitement s'appliquer à d'autres architectures.
 
 
 ### Principe
@@ -237,10 +237,10 @@ function user(state = {}, action) {
 }
 ```
 
-Ps : On utilise ici l’opérateur **object spread** (**...**),
-une syntaxe d’ECMAScript 2016, qui permet de copier les propriétés d’un
-object dans un nouvel object d’une manière plus succincte.
-Nous pouvons également utiliser des bibliothèques qui garantissent l'immutalibilité telles que *[immutable.js](https://github.com/facebook/immutable-js/)* développée par Facebook.
+> Note : On utilise ici l’opérateur **object spread** (**...**),
+> une syntaxe d’ECMAScript 2016, qui permet de copier les propriétés d’un
+> object dans un nouvel object d’une manière plus succincte.
+> Nous pouvons également utiliser des bibliothèques qui garantissent l'immutalibilité telles que *[immutable.js](https://github.com/facebook/immutable-js/)* développée par Facebook.
 
 <h6>TODO: combineReducer pour réduire le boilerplate</h6>
 
@@ -436,6 +436,52 @@ Les composants React ne connaisse que cette interface.
 Une conséquence directe est le *découplage* de ces composants vis-à-vis de la *forme* du state. 
 Un autre bénéfice est la simplification du code des composants React.
 
+#### Exemple avec la bibliothèque [reselect](https://github.com/reactjs/reselect)
+
+##### Définition des selectors
+```javascript
+const getUsers = state => state.users
+const getSearchTerm = state => state.searchTerm
+
+// Memoized selector
+const getFilteredUsers = createSelector(
+  getUsers,
+  getSearchTerm,
+  (users, searchTerm) => users.filter(
+    user => user.indexOf(searchTerm) > -1
+  )
+);
+```
+
+
+##### Définition du composant React
+
+```javascript
+// Composant React - liste d'utilisateurs 
+const UserList = ({ filteredUsers }) => (
+  <ul>
+    {filteredUsers.map(user => <li>{user}</li>)}
+  </ul>
+);
+```
+
+##### Création du container
+
+```javascript
+export default connect(state => (
+  filteredUsers: getFilteredUsers(state)
+))(UserList);
+```
+> Note : Nous avons seulement besoin de transmettre la liste filtrée au composant UserList.
+> `connect` suffit à créer le composant *container*.
+
+> Note 1 : Le pattern *mapStateToProps* étant récurrent, un sucre syntaxique serait :
+
+```javascript
+export default connect(createStructuredSelector({
+  filteredUsers: getFilteredUsers,
+}))(UserList);
+```
 
 ### Structurer le State
 TODO: ..
