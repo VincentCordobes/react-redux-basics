@@ -257,16 +257,14 @@ Le **store** est un objet qui:
 -   permet d’abonner des composants via `subscribe(listener)` (composants notifiés lorsque le state subit une modification)
 
 ### Async Actions
-
-Afin d’effectuer des appels à l’API (actions ayant des effets de bords
-sur l’application) nous pouvons utiliser le middleware *Redux-thunk*. 
-Ce middleware permet d'intercepter des **actions fonctions** (appelées *thunk action creator*) et de les exécuter.
-Cette *thunk action creators* ne doivent pas forcément être pure et peuvent donc avoir des effets
-de bords (appels Réseaux) Elle peuvent également dispatcher d'autres *actions*.
+Afin d'orchestrer des flux asynchrones (par exemple, les appels réseaux) nous pouvons utiliser le middleware *Redux-thunk*. 
+Ce middleware permet de traiter les **actions** étant des **fonctions** (appelées *thunk action*).
+Une action *thunk* ne doit pas forcément être pure et peut avoir des effets
+de bords. Les fonctions *dispatch* et *getState* du store lui sont passé en argument, ce qui lui donne la possibilité de *dispatcher* d'autres *actions* et d'accéder au *state*.
 
 ```javascript
 function whatIsMyName() {
-  return async dispatch => {
+  return async (dispatch, getState) => {
     dispatch(requestName());
     try {
       const res = await fetch('http://vincent.cordobes/name');
