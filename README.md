@@ -265,13 +265,13 @@ de bords. Les fonctions *dispatch* et *getState* du store lui sont passé en arg
 ```javascript
 function whatIsMyName() {
   return async (dispatch, getState) => {
-    dispatch(requestName());
+    dispatch(fetchNameRequest());
     try {
       const res = await fetch('http://vincent.cordobes/name');
       const name = await res.json();
-      dispatch(receiveName(name));
+      dispatch(fetchNameSuccess(name));
     } catch (err) {
-      dispatch(requestNameFailed(err));
+      dispatch(fetchNameError(err));
     }
   }
 }
