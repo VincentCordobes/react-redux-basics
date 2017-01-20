@@ -205,7 +205,7 @@ Le reducer est une fonction pure, par conséquent il ne doit **jamais**:
 
 Il est uniquement chargé de calculer le *nextState*.
 
-##### ✘ Exemple: un reducer incorrect : Mutation du state INTERDITE
+#### ✘ Exemple: un reducer incorrect : Mutation du state INTERDITE
 Le state est muté.
 La propriété du state étant modifiée directment (l.4),
 les composants abonnées à cette partie du state ne se mettrons pas à jour et ignorerons cette modification.
@@ -222,7 +222,7 @@ function user(state = {}, action) {
 }
 ```
 
-##### ✔ Exemple Un Reducer correct 
+#### ✔ Exemple Un Reducer correct 
 ```javascript
 function user(state = {}, action) {
   switch (action.type) {
@@ -262,7 +262,7 @@ Ce middleware permet de traiter les **actions** étant des **fonctions** (appel�
 Une action *thunk* ne doit pas forcément être pure et peut avoir des effets
 de bords. Les fonctions *dispatch* et *getState* du store lui sont passé en argument, ce qui lui donne la possibilité de *dispatcher* d'autres *actions* et d'accéder au *state*.
 
-##### Exemple d’un thunk action creator qui retourne une function :
+#### Exemple d’un thunk action creator qui retourne une function :
 ```javascript
 function whatIsMyName() {
   return async (dispatch, getState) => {
@@ -332,7 +332,7 @@ Le code ci-dessous est **mauvais** 👿, en effet un même composant **ne devrai
 
 Il n'y a aucune séparation entre la vue et les traitements et ce type de code peut très vite s'avérer désordre.
 
-##### ✘ Un "mauvais" composant :
+#### ✘ Un "mauvais" composant :
 ```javascript
 class TrackList extends React.Component {
   state = { tracks: [] }
@@ -358,7 +358,7 @@ class TrackList extends React.Component {
 
 Nous pouvons le séparer en 2 composants, le premier étant un **container component** et le deuxieme un **presentational component**.
 
-##### ✔ Container component :
+#### ✔ Container component :
 
 ```javascript
 // LOgic is here!! 
@@ -382,7 +382,7 @@ class TrackListContainer extends React.Component {
 ```
 
 
-##### ✔ Presentational component : 
+#### ✔ Presentational component : 
 ```javascript
 // here is our view
 const TrackList = ({ tracks }) => (
