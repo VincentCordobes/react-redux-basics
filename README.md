@@ -283,15 +283,15 @@ une fonction. Des actions marquant le début, le succès ou une erreur de
 l’appel (l.5) à l’API sont “dispatchées” (l.3, l.7, l.9) permettant de
 mettre à jour le *store* en fonction de l'avancement de la requête.
 
-Remarques relativement au code ci-dessus : une syntaxe
-particulière avec les mots clés **async/await**. Cette syntaxe est une
-proposition (stage 3) pour ECMAScript 2016. En résumé, `await`
-permet d’attendre la résolution d’une promesse et ne peux être utilisé
-que dans une fonction préfixée par `async`.
-Il permet d’écrire le code asynchrone de javascript à la manière d’un code synchrone et ainsi
-éviter les *callback hell* et donc rendre le code plus lisible.
-Il permet également d’avoir une gestion d’erreur beaucoup plus
-agréable à l’aide des `try/catch`.
+>Remarques relativement au code ci-dessus : une syntaxe
+>particulière avec les mots clés **async/await**. Cette syntaxe est une
+>proposition (stage 3) pour ECMAScript 2016. En résumé, `await`
+>permet d’attendre la résolution d’une promesse et ne peux être utilisé
+>que dans une fonction préfixée par `async`.
+>Il permet d’écrire le code asynchrone de javascript à la manière d’un code synchrone et ainsi
+>éviter les *callback hell* et donc rendre le code plus lisible.
+>Il permet également d’avoir une gestion d’erreur beaucoup plus
+>agréable à l’aide des `try/catch`.
 
 2 types de composants React
 ---------------------------------------------------
