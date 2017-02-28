@@ -175,7 +175,7 @@ Si cette action se révèle être utilisée souvent, nous pouvons écrire une fo
 function changeName(name) {
   return {
     type: 'CHANGE_NAME',
-    payload: 'Vince'
+    payload: name
   }
 }
 ```
@@ -191,7 +191,7 @@ du **reducer**. Le **reducer** est une **fonction pure** qui prend en
 paramètre le *state*, une action, et retourne le nouveau *state*.
 
 ```
-(previousState, action) =&gt; nextState
+(previousState, action) => nextState
 ```
 
 Le reducer est une fonction pure, par conséquent il ne doit **jamais**:
