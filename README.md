@@ -326,11 +326,11 @@ Ils peuvent être la plupart du temps écrits sous la forme de fonction (cf figu
 ### Exemple avec React (sans redux)
 Considérons un composant qui affiche une liste de pistes (tracks) provenant d'une api.
 
-Le code ci-dessous est **mauvais** 👿, en effet un même composant **ne devrait pas**:
-- aller chercher les données de l'api et potentiellement les transformer 
-- afficher et mettre en forme les données 
+Le code ci-dessous est **mauvais** 👿, en effet un même composant **ne devrait pas** être responsable à la fois:
+- d'aller chercher les données de l'api et potentiellement les transformer  
+- d'afficher et mettre en forme les données 
 
-Il n'y a aucune séparation entre la vue et les traitements et ce type de code peut très vite s'avérer désordre.
+Cette non-séparation entre la vue et la logique métier peut s'avérer, à la longue, difficile à maintenir.
 
 #### ✘ Un "mauvais" composant :
 ```javascript
