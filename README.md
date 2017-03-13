@@ -87,6 +87,87 @@ React.createElement('Bonjour', {
 });
 ```
 
+#### Distinguer 2 types de composants React
+
+D'un point de vue architectural, on peut très vite distinguer deux types de composants.
+Redux (cf: suite de l'article) apporte son vocublaire de 
+**container component** (ou *smart component*) et
+**presentational component** (ou *dumb component*)
+Si l'on se rapportait à une architecture MVC plus tradionnelle, 
+le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
+**On sépare donc les composants responsables de l'orchestration des actions/logique métier de ceux reponsables de la vue**
+(on ne melange pas les chèvres et les brebis)
+
+### Exemple
+Considérons un composant qui affiche une liste de pistes (tracks) provenant d'une api.
+
+Le code ci-dessous est **mauvais** 👿, en effet un même composant **ne devrait pas** être responsable à la fois:
+- d'aller chercher les données de l'api et potentiellement les transformer  
+- d'afficher et mettre en forme les données 
+
+Ce manque de séparation entre la vue et la logique métier peut très vite rendre le code difficile à maintenir.
+
+#### ✘ Un "mauvais" composant :
+```javascript
+class TrackList extends React.Component {
+  state = { tracks: [] }
+
+  componentDidMount() {
+    axios.get('/tracks')
+      .then(response => response.data)
+      .then(tracks => this.setState({ tracks }))
+      .catch(handleError);
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.tracks.map(track => (
+          <li>{track}</li>
+        ))}
+      </ul>
+    )
+  }
+}
+```
+
+Nous pouvons le séparer en 2 composants, le premier étant un **container component** et le deuxieme un **presentational component**.
+
+#### ✔ Container component :
+
+```javascript
+// LOgic is here!! 
+// we have completely separated our logic and our view
+class TrackListContainer extends React.Component {
+  state = { tracks: [] }
+
+  componentDidMount() {
+    axios.get('/tracks')
+      .then(response => response.data)
+      .then(tracks => this.setState({ tracks }))
+      .catch(handleError);
+  }
+
+  render() {
+    // This is our view 
+    // and the `tracks` props is like our ViewModel 
+    return <TrackList tracks={this.state.tracks} />
+  }
+}
+```
+
+
+#### ✔ Presentational component : 
+```javascript
+// here is our view
+const TrackList = ({ tracks }) => (
+  <ul>
+    {this.state.tracks.map(track => (
+      <li>{track}</li>
+    ))}
+  </ul>
+)
+```
 
 #### DOM Virtuel
 React implémente un **DOM virtuel** qui est une représentation interne
@@ -283,26 +364,19 @@ une fonction. Des actions marquant le début, le succès ou une erreur de
 l’appel (l.5) à l’API sont “dispatchées” (l.3, l.7, l.9) permettant de
 mettre à jour le *store* en fonction de l'avancement de la requête.
 
->Remarques relativement au code ci-dessus : une syntaxe
->particulière avec les mots clés **async/await**. Cette syntaxe est une
->proposition (stage 3) pour ECMAScript 2016. En résumé, `await`
->permet d’attendre la résolution d’une promesse et ne peux être utilisé
->que dans une fonction préfixée par `async`.
->Il permet d’écrire le code asynchrone de javascript à la manière d’un code synchrone et ainsi
->éviter les *callback hell* et donc rendre le code plus lisible.
->Il permet également d’avoir une gestion d’erreur beaucoup plus
->agréable à l’aide des `try/catch`.
+> Remarques relativement au code ci-dessus : une syntaxe
+> particulière avec les mots clés **async/await**. Cette syntaxe est une
+> proposition (stage 3) pour ECMAScript 2016. En résumé, `await`
+> permet d’attendre la résolution d’une promesse et ne peux être utilisé
+> que dans une fonction préfixée par `async`.
+> Il permet d’écrire le code asynchrone de javascript à la manière d’un code synchrone et ainsi
+> éviter les *callback hell* et donc rendre le code plus lisible.
+> Il permet également d’avoir une gestion d’erreur beaucoup plus
+> agréable à l’aide des `try/catch`.
 
-2 types de composants React
+Composants "Container" et composants visuels 
 ---------------------------------------------------
 
-D'un point de vue architectural, il est bon de distinguer deux types de composants React: 
-les **container component** (ou *smart component*) et
-**presentational component** (ou *dumb component*)
-Si l'on se rapportait à une architecture MVC plus tradionnelle, 
-le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
-**On sépare donc les composants responsables de la logique métier de ceux reponsables de la vue**
-(on ne melange pas les chèvres et les brebis)
 
 ### *Container* composants 
 
@@ -323,76 +397,6 @@ Ils sont parfois appelés “dumb” car ils ne **connaissent que leur _props_.*
 Ils **recoivent les données et les callback exclusivement via leurs props**.
 Ils peuvent être la plupart du temps écrits sous la forme de fonction (cf figure 6)
 
-### Exemple avec React (sans redux)
-Considérons un composant qui affiche une liste de pistes (tracks) provenant d'une api.
-
-Le code ci-dessous est **mauvais** 👿, en effet un même composant **ne devrait pas** être responsable à la fois:
-- d'aller chercher les données de l'api et potentiellement les transformer  
-- d'afficher et mettre en forme les données 
-
-Cette non-séparation entre la vue et la logique métier peut s'avérer, à la longue, difficile à maintenir.
-
-#### ✘ Un "mauvais" composant :
-```javascript
-class TrackList extends React.Component {
-  state = { tracks: [] }
-
-  componentDidMount() {
-    axios.get('/tracks')
-      .then(response => response.data)
-      .then(tracks => this.setState({ tracks }))
-      .catch(handleError);
-  }
-
-  render() {
-    return (
-      <ul>
-        {this.state.tracks.map(track => (
-          <li>{track}</li>
-        ))}
-      </ul>
-    )
-  }
-}
-```
-
-Nous pouvons le séparer en 2 composants, le premier étant un **container component** et le deuxieme un **presentational component**.
-
-#### ✔ Container component :
-
-```javascript
-// LOgic is here!! 
-// we have completely separated our logic and our view
-class TrackListContainer extends React.Component {
-  state = { tracks: [] }
-
-  componentDidMount() {
-    axios.get('/tracks')
-      .then(response => response.data)
-      .then(tracks => this.setState({ tracks }))
-      .catch(handleError);
-  }
-
-  render() {
-    // This is our view 
-    // and the `tracks` props is like our ViewModel 
-    return <TrackList tracks={this.state.tracks} />
-  }
-}
-```
-
-
-#### ✔ Presentational component : 
-```javascript
-// here is our view
-const TrackList = ({ tracks }) => (
-  <ul>
-    {this.state.tracks.map(track => (
-      <li>{track}</li>
-    ))}
-  </ul>
-)
-```
 
 Selectors
 -----------
