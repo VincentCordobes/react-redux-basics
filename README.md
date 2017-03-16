@@ -170,8 +170,11 @@ const TrackList = ({ tracks }) => (
 ```
 
 #### DOM Virtuel
-React implémente un **DOM virtuel** qui est une représentation interne
-en javascript du DOM. Voici un schéma illustrant le processus :
+Lorsque nous écrivons un composant React, nous décrivons à quoi l'UI ressemble en fonction des *props*.
+Même si React donne le sentiment au développeur de repeindre entièrement le DOM à chaque "update",
+il implémente, en réalité, un **DOM virtuel** qui est une représentation interne
+en javascript du DOM. 
+Voici un schéma illustrant le processus :
 
 
 <p align="center" ><img src="https://www.dropbox.com/s/ovawut1f5t6yfae/react_batch.svg?dl=1" width="600"></p>
@@ -374,8 +377,10 @@ mettre à jour le *store* en fonction de l'avancement de la requête.
 > Il permet également d’avoir une gestion d’erreur beaucoup plus
 > agréable à l’aide des `try/catch`.
 
-Composants "Container" et composants visuels 
----------------------------------------------------
+Composants "Container" et composants "visuels" 
+-----------------------------------------------
+La séparation "container"/"presentational" est d'autant plus vrai dans redux.
+Le créateur de redux détails très bien sa vision des à ce propos.
 
 
 ### *Container* composants 
