@@ -16,10 +16,13 @@ La solution de React est de décrire “à quoi” l’application doit
 ressembler à n’importe quel instant donné → construction de
 l’UI de manière **déclarative**. Ce fonctionnement nous donne
 l’impression que React redessine entièrement l’interface à chaque update
-(uniquement une impression → cf *DOM virtuel*) Cela rend le
+(uniquement une impression → cf *DOM virtuel*) Cela rend la conception et le
 développement d’application considérablement plus simple et nous permet
-de garder très facilement l’interface à jour avec les données.
+de garder très facilement l’interface à jour avec un modèle de données.
 L’élaboration de ces interfaces se fait à base de **composants React**.
+
+On pourrait assimiler un **composant React** à une **fonction**.
+C'est d'ailleurs une des 2 manières possibles d'écrire une composant React.
 
 L’API des composants est très simple. Un composant *peut* posséder :
 -   un **state**
@@ -52,9 +55,8 @@ const Bonjour = (props) => (
 ```
 
 Ce type de composant **ne possède pas de state, pas d’instance ni 
-de méthodes liées au cycle de vie** d’un composant React. Il ne s’agit que de
-simples fonctions retournant un résultat ne dépendant que
-des données d’entrées (les *props*)
+de méthodes liées au cycle de vie** d’un composant React. Il ne s’agit que d'une
+simple fonction retournant un résultat en fonction de ses arguments (les *props*)
 Cette écriture étant plus consise, elle est à privilégier dans la mesure du possible.
 
 
@@ -89,13 +91,12 @@ React.createElement('Bonjour', {
 
 #### Distinguer 2 types de composants React
 
-D'un point de vue architectural, on peut très vite distinguer deux types de composants.
-Redux (cf: suite de l'article) apporte son vocublaire de 
-**container component** (ou *smart component*) et
+D'un point de vue architectural, nous pouvons très vite distinguer deux types de composants.
+Redux (cf: suite de l'article) parle de **container component** (ou *smart component*) et de
 **presentational component** (ou *dumb component*)
 Si l'on se rapportait à une architecture MVC plus tradionnelle, 
 le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
-**On sépare donc les composants responsables de l'orchestration des actions/logique métier de ceux reponsables de la vue**
+**On sépare donc les composants responsables de l'orchestration des actions/logique métier, de ceux reponsables de la vue**
 (on ne melange pas les chèvres et les brebis)
 
 ### Exemple
