@@ -96,17 +96,16 @@ Redux (cf: suite de l'article) parle de **container component** (ou *smart compo
 **presentational component** (ou *dumb component*)
 Si l'on se rapportait à une architecture MVC plus tradionnelle, 
 le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
-**On sépare donc les composants responsables de l'orchestration des actions/logique métier, de ceux reponsables de la vue**
-(on ne melange pas les chèvres et les brebis)
+**On sépare donc les composants responsables de la logique métier/orchestration des actions, de ceux reponsables de la vue**
 
 ### Exemple
 Considérons un composant qui affiche une liste de pistes (tracks) provenant d'une api.
 
-Le code ci-dessous est **mauvais** 👿, en effet un même composant **ne devrait pas** être responsable à la fois:
+Le code ci-dessous est **moyen** 👿, en effet un même composant **ne devrait pas** être responsable à la fois:
 - d'aller chercher les données de l'api et potentiellement les transformer  
-- d'afficher et mettre en forme les données 
+- d'afficher et mettre en forme ces données 
 
-Ce manque de séparation entre la vue et la logique métier peut très vite rendre le code difficile à maintenir.
+Ce manque de séparation entre la vue et la logique métier peut très vite rendre le code difficile à maintenir lorsque ce dernier grossit.
 
 #### ✘ Un "mauvais" composant :
 ```javascript
@@ -132,7 +131,7 @@ class TrackList extends React.Component {
 }
 ```
 
-Nous pouvons le séparer en 2 composants, le premier étant un **container component** et le deuxieme un **presentational component**.
+Nous pouvons le séparer en 2 composants, le premier étant un component "container" et le deuxieme un component visuel.
 
 #### ✔ Container component :
 
@@ -182,7 +181,7 @@ Voici un schéma illustrant le processus :
 <h6 align="center" >React et son DOM virtuel</h6>
 
 
-Lorsque les <span style="color: #D32F2F">données changent</span> la méthode *render* d’un composant renvoie 
+Lorsque le <span style="color: #D32F2F">modèle de données change</span> la méthode *render* du composant renvoie 
 un object correspondant à la représentation interne du DOM virtuel.
 React compare ensuite ce nouveau DOM virtuel avec le précédent
 (algorithme de diff interne), et met à jour le *vrai DOM* en appliquant un série d’opérations
@@ -201,7 +200,7 @@ Les différentes composantes de ce schéma sont expliquées dans la suite de ce 
 <h6 align="center" >Synoptique technique React-Redux</h6>
 
 > Note : Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et patterns (immutabilités, flux unidirectionel etc..)
-> et ses principes sous-jacents peuvent parfaitement s'appliquer à d'autres architectures.
+> et ces principes sous-jacents peuvent parfaitement s'appliquer à d'autres architectures.
 
 
 ### Principe
@@ -209,7 +208,7 @@ Les différentes composantes de ce schéma sont expliquées dans la suite de ce 
 *React* fournit seulement un moyen de dessiner de manière efficace des
 composants en fonction de données d’entrées.
 
-**Flux** est un style d’architecture qui garanti un flux de données
+**Flux** est un pattern permettant de gérer **l'état d'une application** qui garanti un flux de données
 unidirectionnel (*one way databinding*) **Redux** est l’implémentation
 la plus populaire.
 
@@ -232,11 +231,11 @@ la plus populaire.
 <p align="center"><img src="https://www.dropbox.com/s/yst3zq1o0uxtas7/flux.svg?dl=1" width="540"></p>
 <h6 align="center">Architecture Redux</h6>
 
-Le schéma illustre le flux unidirectionnel de donnée dans cette
-architecture: des actions sont “dispatchées” et traitées par le
-*reducer*, qui se charge de mettre à jour le *store*. Toutes les vues
+Le schéma illustre le flux unidirectionnel des données dans cette
+architecture: des **actions** sont **“dispatchées”** et traitées par le
+**reducer**, qui se charge de mettre à jour le **store**. Toutes les vues
 (ici les composants react) abonnées au store se mettent à jour en
-conséquence. Ces vues peuvent également dispatcher des
+conséquence. Ces vues peuvent également de "dispatcher" des
 actions et ainsi de suite.
 
 ### Actions et Actions creator
@@ -255,7 +254,7 @@ changement de nom d’une personne :
 }
 ```
 
-Si cette action se révèle être utilisée souvent, nous pouvons écrire une fonction qui se chargera de la créer pour nous.
+Si cette action se révèle être utilisée souvent, nous pouvons écrire une fonction qui se chargera de la créer.
 ```javascript
 function changeName(name) {
   return {
@@ -368,11 +367,11 @@ une fonction. Des actions marquant le début, le succès ou une erreur de
 l’appel (l.5) à l’API sont “dispatchées” (l.3, l.7, l.9) permettant de
 mettre à jour le *store* en fonction de l'avancement de la requête.
 
-> Remarques relativement au code ci-dessus : une syntaxe
-> particulière avec les mots clés **async/await**. Cette syntaxe est une
-> proposition (stage 3) pour ECMAScript 2016. En résumé, `await`
+> Remarques relativement au code ci-dessus : syntaxe
+> avec les mots clés **async/await**. Cette syntaxe fait son apparition dans 
+> ECMAScript 2017. En résumé, `await`
 > permet d’attendre la résolution d’une promesse et ne peux être utilisé
-> que dans une fonction préfixée par `async`.
+> que dans une fonction préfixée par `async` (elle-même renverra à son tour une promesse)
 > Il permet d’écrire le code asynchrone de javascript à la manière d’un code synchrone et ainsi
 > éviter les *callback hell* et donc rendre le code plus lisible.
 > Il permet également d’avoir une gestion d’erreur beaucoup plus
@@ -381,33 +380,45 @@ mettre à jour le *store* en fonction de l'avancement de la requête.
 Composants "Container" et composants "visuels" 
 -----------------------------------------------
 La séparation "container"/"presentational" est d'autant plus vrai dans redux.
-Le créateur de redux détails très bien sa vision des à ce propos.
+Ces deux termes proviennent, en l'occurrence, du créateur de redux.
+![smart and dumb components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.xbauu6f3x)
 
 
 ### *Container* composants 
+- Responsables de la manière dont **“les choses” fonctionnent**
 
-Les *container components* sont responsables de la manière dont **“les choses” fonctionnent**. 
-Ils peuvent **communiquer directement avec le _store_** dans l’architecture Redux. 
-Ils sont entièrement **spécifiques à l’application**.
-Ils peuvent contenir aussi bien des *container components* que des *presentational components*.
-Ils **transmettent** les **données du store** et les **comportements** (**callback**) **aux dumb components** **via leurs _props_**. 
-Ils **déclenchent les actions Flux**(Redux).
+- Sont souvent stateful et servent de **sources de données**
+
+- **“Dispatchent” les actions** flux
+
+- **Transmettent** des **données et comportements** aux composants "presentational” **via leur _props_**
+
+- Peuvent contenir des composants “présentation” et “container”
+
+- **Ne contiennent pas** d’éléments du DOM ni de styles
+
+- Peuvent être **générés par connect()**
 
 ### *Presentational* composants 
+- Responsables de la manière dont **“les choses” apparaissent sur l’interface**
 
-Les *presentational components* sont responsables de la manière dont **“les choses”
-apparaissent sur l’interface.**
-Ils sont complètement **indépendants** du reste de l’application (*store*, *actions*) 
-et sont donc réutilisables, que ce soit à l’intérieur ou à l’extérieur de l’application.
-Ils sont parfois appelés “dumb” car ils ne **connaissent que leur _props_.**
-Ils **recoivent les données et les callback exclusivement via leurs props**.
-Ils peuvent être la plupart du temps écrits sous la forme de fonction (cf figure 6)
+- Peuvent contenir des composants “présentation” et “container”
 
+- **possèdent** souvent des **éléments DOM** et du **style**
+
+- **Indépendants** du reste de l’application
+
+- Ne spécifient pas la manière dont les données sont chargés ou modifiées
+
+- **Reçoivent** les **données et les callback** exclusivement via leurs **props**
+
+- Possède uniquement un state si celui-ci concerne l’UI (et non des data)
+
+- Souvent écrits sous forme de fonctions
 
 Selectors
 -----------
 
-### 
 Afin de comprendre l'utilité des selecteurs, prenons un exemple.
 Considérons une liste de personnes, une recherche (par nom) et des filtres (sexe, age, etc...) sur ces personnes.
 
@@ -421,24 +432,27 @@ Les états dérivés (calculés) ne doivent pas être présents dans le *state*.
 
 <p align="center"><img src="https://www.dropbox.com/s/aj8zj878ivnf7n6/selectors0.svg?dl=1" width="260"></p>
 
-On a donc la méthode `render` chargée de filtrer la liste et de l’afficher. 
+Le "bon" endroit pour filtrer et afficher cette liste est donc la méthode _render_.
 Ainsi, si  un critère de recherche ou si les données changent,
 le composant execute la méthode `render`, filtre les données et les affiche.
-Il en résulte une UI toujours synchronisée avec les données du state. 
+Il en résulte une UI toujours synchronisée avec le _state_. 
 
-L'inconvénient est que le filtrage se fait à chaque mise à jour du composant. 
-Cela n'est pas très génant dans ce cas ci.
-Cependant, des listes de données potentiellement grandes et des calculs complexes dégraderaient fortement les performances de l'application.
+Cette technique présente néanmoins un inconvénient.
+Supposons qu'une _props_ **autre** que les filtres et la liste de personnes, change :
+le filtrage de la liste se fera donc, **inutilement**, à chaque _update_ du composant.
 
+La compléxité de ce filtrage étant du 0(n), cela n'est pas très génant si la taille des données à filter reste modérée. 
 
-C'est là qu'entrent en jeu les **selectors**:
+Cependant, des listes de données potentiellement grandes ou même un calcul plus  complexes dégraderaient fortement les performances de l'application.
+
+C'est ici qu'entrent en jeu les **selectors**:
 
 <p align="center"><img src="https://www.dropbox.com/s/7gxp1rrntx2lhmj/selectors.svg?dl=1" width="300"></p>
 
 Les *selectors* **calculent des données dérivées**. Ils permettent au *state* de ne stocker que les **données minimisée**.
-Ils sont **efficaces** et ne sont **pas recalculés** si les arguments restent les mêmes.
+Ils sont **efficaces** et ne sont **pas recalculés** si les arguments restent les mêmes → ils sont **mémoisés**.
 Enfin ils sont *composables*, c’est à dire qu’ils peuvent être utilisés en
-tant qu’entrées à d’autres *selectors*.
+entrées d'autres *selectors*.
 Ainsi toute la complexité est *déplacée* à l'exterieur et prise en charge par les **selectors**,
 
 Les *selectors* jouent le rôle d'*api*, permettant un accès au state. 
