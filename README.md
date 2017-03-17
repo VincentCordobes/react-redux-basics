@@ -7,26 +7,26 @@ React
 React est une bibliothèque javascript permettant
 de **construire des interfaces graphiques composables**. 
 
-La modélisation des interfaces graphiques d’une application au cours du temps est un sujet
-complexe. Il est, en effet, difficile de suivre l’état d’une application, après une série
-d’interactions utilisateur et/ou externes.
-Dans un SPA, nous ne pouvons plus compter sur des "rechargement entiers" d'une page web pour garder une interface synchronisée et cohérente.
+La modélisation des interfaces graphiques d'une application au cours du temps est un sujet
+complexe. Il est, en effet, difficile de suivre l'état d'une application, après une série
+d'interactions utilisateur et/ou externes.
+Dans un SPA, nous ne pouvons plus compter sur des rechargements entiers d'une page web pour garder une interface synchronisée et cohérente.
 
-La solution de React est de décrire “à quoi” l’application doit
-ressembler à n’importe quel instant donné → construction de
-l’UI de manière **déclarative**. Ce fonctionnement nous donne
-l’impression que React redessine entièrement l’interface à chaque _update_
+La solution de React est de décrire “à quoi” l'application doit
+ressembler à n'importe quel instant donné → construction de
+l'_UI_ de manière **déclarative**. Ce fonctionnement nous donne
+l'impression que React redessine entièrement l'interface à chaque _update_
 (uniquement une impression → cf *DOM virtuel*) Cela rend la conception et le
-développement d’application considérablement plus simple et nous permet
-de garder très facilement l’interface à jour avec un modèle de données.
-L’élaboration de ces interfaces se fait à base de **composants React**.
+développement d'application considérablement plus simple et nous permet
+de garder très facilement l'interface à jour avec un modèle de données.
+L'élaboration de ces interfaces se fait à base de **composants React**.
 
 On pourrait assimiler un **composant React** à une **fonction**.
 C'est d'ailleurs une des 2 manières possibles d'écrire une composant React.
 
-L’API des composants est très simple. Un composant *peut* posséder :
+L'API des composants est très simple. Un composant *peut* posséder :
 -   un **state**
--   des propriétés: les données d’entrées du composant →
+-   des propriétés: les données d'entrées du composant →
     **props**
 -   Une méthode **render** chargée du rendu du composant, appelée
     lorsque son *state* ou une de ses *props* changent.
@@ -54,29 +54,29 @@ const Bonjour = (props) => (
 )
 ```
 
-Ce type de composant **ne possède pas de state, pas d’instance ni 
-de méthodes liées au cycle de vie** d’un composant React. Il ne s’agit que d'une
+Ce type de composant **ne possède pas de state, pas d'instance ni 
+de méthodes liées au cycle de vie** d'un composant React. Il ne s'agit que d'une
 simple fonction retournant un résultat en fonction de ses arguments (les *props*)
 Cette écriture étant plus concise, elle est à privilégier dans la mesure du possible.
 
 
 
-#### Dessiner un composant dans un noeud du DOM
+#### Dessiner un composant dans un nœud du DOM
 ```javascript
 ReactDOM.render(
   <Bonjour user="Vincent" />,
   document.getElementById('root')
 )
 ```
-Pour dessiner le composant dans le DOM il suffit d’appeler
+Pour dessiner le composant dans le DOM il suffit d'appeler
 la méthode `ReactDOM.render` avec ledit Composant et le nœud du DOM où
-l’on souhaite le dessiner
+l'on souhaite le dessiner
 
 #### JSX
 
-Le code "XML like" que retourne la méthode *render* s’appelle du **JSX**
+Le code "XML like" que retourne la méthode *render* s'appelle du **JSX**
 et est un sucre syntaxique permettant de créer les nœuds React.
-L’utilisation du JSX n’est pas obligatoire. Voici la correspondance du
+L'utilisation du JSX n'est pas obligatoire. Voici la correspondance du
 code JSX :
 ```javascript
 <Bonjour user="Vincent" />
@@ -184,8 +184,8 @@ Voici un schéma illustrant le processus :
 Lorsque le <span style="color: #D32F2F">modèle de données change</span> la méthode *render* du composant renvoie 
 un objet correspondant à la représentation interne du DOM virtuel.
 React compare ensuite ce nouveau DOM virtuel avec le précédent
-(algorithme de diff interne), et met à jour le *vrai DOM* en appliquant un série d’opérations
-optimisées. Ce DOM virtuel permet donc d’optimiser les accès au “vrai DOM”, les modifications sont appliquées
+(algorithme de diff interne), et met à jour le *vrai DOM* en appliquant un série d'opérations
+optimisées. Ce DOM virtuel permet donc d'optimiser les accès au “vrai DOM”, les modifications sont appliquées
 en une fois.
 
 Architecture Flux : Redux
@@ -206,25 +206,25 @@ Les différentes composantes de ce schéma sont expliquées dans la suite de ce 
 ### Principe
 
 *React* fournit seulement un moyen de dessiner de manière efficace des
-composants en fonction de données d’entrées.
+composants en fonction de données d'entrées.
 
 **Flux** est un pattern permettant de gérer **l'état d'une application** qui garanti un flux de données
-unidirectionnel (*one way databinding*) **Redux** est l’implémentation
+unidirectionnel (*one way databinding*) **Redux** est l'implémentation
 la plus populaire.
 
 *Redux*, met en scène 3 principes :
 
--   **une seule source de vérité** : le **state** de l’application est
-    maintenu dans une structure de données à l’intérieur d’un seul
+-   **une seule source de vérité** : le **state** de l'application est
+    maintenu dans une structure de données à l'intérieur d'un seul
     **store**
 
 -   **le state est immutable** : La seule manière de modifier le
-    *state* est via l’émission d’une **action**, un objet
+    *state* est via l'émission d'une **action**, un objet
     **décrivant** la modification à apporter. 
     Toutes les modifications sont centralisées et se produisent une
     à une, évitant ainsi les problèmes de concurrence
 
--   **les modifications sont effectuées à l’aide de fonction pures**
+-   **les modifications sont effectuées à l'aide de fonction pures**
     appelées **reducers**
 
 
@@ -241,11 +241,11 @@ actions et ainsi de suite.
 ### Actions et _Actions creators_
 
 Les **actions** sont des paquets de données envoyés au *store*. Elles
-sont la seule source d’information du store. Une action est envoyée au
+sont la seule source d'information du store. Une action est envoyée au
 store grâce à la fonction `store.dispatch`.
 
-Voici un exemple d’action qui représente le
-changement de nom d’une personne :
+Voici un exemple d'action qui représente le
+changement de nom d'une personne :
 
 ```javascript
 {
@@ -265,12 +265,12 @@ function changeName(name) {
 ```
 
 On appelle ces fonctions des **action creator**.  Elles rendent les actions réutilisables et facilement testables. 
-Les actions peuvent être “dispatchées” avec : `dispatch(changeName(’Vincent’))`
+Les actions peuvent être “dispatchées” avec : `dispatch(changeName('Vincent'))`
 
 ### Reducer
 
-Les actions décrivent le fait que quelque chose s’est passé mais ne
-spécifient pas la manière dont le store doit être modifié. C’est le rôle
+Les actions décrivent le fait que quelque chose s'est passé mais ne
+spécifient pas la manière dont le store doit être modifié. C'est le rôle
 du **reducer**. Le **reducer** est une **fonction pure** qui prend en
 paramètre le *state*, une action, et retourne le nouveau *state*.
 
@@ -321,9 +321,9 @@ function user(state = {}, action) {
 }
 ```
 
-> Note : On utilise ici l’opérateur **object spread** (**...**),
-> une syntaxe d’ECMAScript 2016, qui permet de copier les propriétés d’un
-> objet dans un nouvel objet d’une manière plus succincte.
+> Note : On utilise ici l'opérateur **object spread** (**...**),
+> une syntaxe d'_ECMAScript_ 2016, qui permet de copier les propriétés d'un
+> objet dans un nouvel objet d'une manière plus succincte.
 > Nous pouvons également utiliser des bibliothèques qui garantissent l'immutabilité telles que *[immutable.js](https://github.com/facebook/immutable-js/)* développée par Facebook.
 
 <!-- <h6>TODO: combineReducer pour réduire le boilerplate</h6> -->
@@ -332,13 +332,13 @@ function user(state = {}, action) {
 
 Le **store** est un objet qui:
 
--   maintient le **state** de l’application
+-   maintient le **state** de l'application
 
--   permet l’accès à ce *state* via `getState()`
+-   permet l'accès à ce *state* via `getState()`
 
 -   permet de mettre à jour le *state* via `dispatch(action)`
 
--   permet d’abonner des composants via `subscribe(listener)` (composants notifiés lorsque le _state_ subit une modification)
+-   permet d'abonner des composants via `subscribe(listener)` (composants notifiés lorsque le _state_ subit une modification)
 
 ### Async Actions
 Afin d'orchestrer des flux asynchrones (par exemple, les appels réseaux) nous pouvons utiliser le _middleware_ *Redux-thunk*. 
@@ -346,7 +346,7 @@ Ce _middleware_ permet de traiter les **actions** étant des **fonctions** (appe
 Une action *thunk* ne doit pas forcément être pure et peut avoir des effets
 de bords. Les fonctions *dispatch* et *getState* du store lui sont passé en argument, ce qui lui donne la possibilité de *dispatcher* d'autres *actions* et d'accéder au *state*.
 
-#### Exemple d’un _thunk action creator_ qui retourne une fonction :
+#### Exemple d'un _thunk action creator_ qui retourne une fonction :
 ```javascript
 function whatIsMyName() {
   return async (dispatch, getState) => {
@@ -362,20 +362,20 @@ function whatIsMyName() {
 }
 ```
 
-L’exemple ci-dessus met en évidence une *action creator* qui retourne
+L'exemple ci-dessus met en évidence une *action creator* qui retourne
 une fonction. Des actions marquant le début, le succès ou une erreur de
-l’appel (l.5) à l’API sont “dispatchées” (l.3, l.7, l.9) permettant de
+l'appel (l.5) à l'API sont “dispatchées” (l.3, l.7, l.9) permettant de
 mettre à jour le *store* en fonction de l'avancement de la requête.
 
 > Remarques relativement au code ci-dessus : syntaxe
 > avec les mots clés **async/await**. Cette syntaxe fait son apparition dans 
 > ECMAScript 2017. En résumé, `await`
-> permet d’attendre la résolution d’une promesse et ne peux être utilisé
+> permet d'attendre la résolution d'une promesse et ne peux être utilisé
 > que dans une fonction préfixée par `async` (elle-même renverra à son tour une promesse)
-> Il permet d’écrire le code asynchrone de javascript à la manière d’un code synchrone et ainsi
+> Il permet d'écrire le code asynchrone de javascript à la manière d'un code synchrone et ainsi
 > éviter les *callback hell* et donc rendre le code plus lisible.
-> Il permet également d’avoir une gestion d’erreur beaucoup plus
-> agréable à l’aide des `try/catch`.
+> Il permet également d'avoir une gestion d'erreur beaucoup plus
+> agréable à l'aide des `try/catch`.
 
 Composants "Container" et composants "visuels" 
 -----------------------------------------------
@@ -395,24 +395,24 @@ Ces deux termes proviennent, en l'occurrence, du créateur de redux.
 
 - Peuvent contenir des composants “présentation” et “container”
 
-- **Ne contiennent pas** d’éléments du DOM ni de styles
+- **Ne contiennent pas** d'éléments du DOM ni de styles
 
 - Peuvent être **générés par connect()**
 
 ### *Presentational* composants 
-- Responsables de la manière dont **“les choses” apparaissent sur l’interface**
+- Responsables de la manière dont **“les choses” apparaissent sur l'interface**
 
 - Peuvent contenir des composants “présentation” et “container”
 
 - **possèdent** souvent des **éléments DOM** et du **style**
 
-- **Indépendants** du reste de l’application
+- **Indépendants** du reste de l'application
 
 - Ne spécifient pas la manière dont les données sont chargés ou modifiées
 
 - **Reçoivent** les **données et les callback** exclusivement via leurs **props**
 
-- Possède uniquement un _state_ si celui-ci concerne l’UI (et non des data)
+- Possède uniquement un _state_ si celui-ci concerne l'UI (et non des data)
 
 - Souvent écrits sous forme de fonctions
 
@@ -451,7 +451,7 @@ C'est ici qu'entrent en jeu les **selectors**:
 
 Les *selectors* **calculent des données dérivées**. Ils permettent au *state* de ne stocker que les **données minimisée**.
 Ils sont **efficaces** et ne sont **pas recalculés** si les arguments restent les mêmes → ils sont **mémoisés**.
-Enfin ils sont *composables*, c’est à dire qu’ils peuvent être utilisés en
+Enfin ils sont *composables*, c'est à dire qu'ils peuvent être utilisés en
 entrées d'autres *selectors*.
 Ainsi toute la complexité est *déplacée* à l'exterieur et prise en charge par les **selectors**,
 
