@@ -10,12 +10,12 @@ de **construire des interfaces graphiques composables**.
 La modélisation des interfaces graphiques d’une application au cours du temps est un sujet
 complexe. Il est, en effet, difficile de suivre l’état d’une application, après une série
 d’interactions utilisateur et/ou externes.
-Dans un SPA, nous ne pouvons plus compter sur des "rechargement totals" d'une page web pour garder une interface synchronisée et cohérente.
+Dans un SPA, nous ne pouvons plus compter sur des "rechargement entiers" d'une page web pour garder une interface synchronisée et cohérente.
 
 La solution de React est de décrire “à quoi” l’application doit
 ressembler à n’importe quel instant donné → construction de
 l’UI de manière **déclarative**. Ce fonctionnement nous donne
-l’impression que React redessine entièrement l’interface à chaque update
+l’impression que React redessine entièrement l’interface à chaque _update_
 (uniquement une impression → cf *DOM virtuel*) Cela rend la conception et le
 développement d’application considérablement plus simple et nous permet
 de garder très facilement l’interface à jour avec un modèle de données.
@@ -30,11 +30,11 @@ L’API des composants est très simple. Un composant *peut* posséder :
     **props**
 -   Une méthode **render** chargée du rendu du composant, appelée
     lorsque son *state* ou une de ses *props* changent.
--   Des méthodes liées au cycle de vie du composant componentDidMount,
-    componentWillReceiveProps etc..)
+-   Des méthodes liées au cycle de vie du composant _componentDidMount_,
+    _componentWillReceiveProps_ etc..)
 
 
-#### Ecriture avec les classes ES6
+#### Écriture avec les classes ES6
 Ci dessous un composant React ayant pour seule vocation à afficher la propriété *user*.
 Si *user* change, React redessine la partie du composant ayant changé.
 ```javascript
@@ -45,7 +45,7 @@ class Bonjour extends React.Component {
 }
 ```
 
-#### Ecriture sous forme de fonction 
+#### Écriture sous forme de fonction 
 Ce composant peut aussi être écrit sous la forme d'une
 fonction appelée **Stateless functional component**. 
 ```javascript
@@ -57,7 +57,7 @@ const Bonjour = (props) => (
 Ce type de composant **ne possède pas de state, pas d’instance ni 
 de méthodes liées au cycle de vie** d’un composant React. Il ne s’agit que d'une
 simple fonction retournant un résultat en fonction de ses arguments (les *props*)
-Cette écriture étant plus consise, elle est à privilégier dans la mesure du possible.
+Cette écriture étant plus concise, elle est à privilégier dans la mesure du possible.
 
 
 
@@ -69,20 +69,20 @@ ReactDOM.render(
 )
 ```
 Pour dessiner le composant dans le DOM il suffit d’appeler
-la méthode `ReactDOM.render` avec ledit Composant et le noeud du DOM où
+la méthode `ReactDOM.render` avec ledit Composant et le nœud du DOM où
 l’on souhaite le dessiner
 
 #### JSX
 
-Le code XML-like que retourne la méthode *render* s’appelle du **JSX**
-et est un sucre syntaxique permettant de créer les noeuds React.
+Le code "XML like" que retourne la méthode *render* s’appelle du **JSX**
+et est un sucre syntaxique permettant de créer les nœuds React.
 L’utilisation du JSX n’est pas obligatoire. Voici la correspondance du
 code JSX :
 ```javascript
 <Bonjour user="Vincent" />
 ```
 
-avec le code javascript équivalent :
+Avec le code javascript équivalent :
 ```javascript
 React.createElement('Bonjour', {
   user: 'Vincent'
@@ -94,12 +94,12 @@ React.createElement('Bonjour', {
 D'un point de vue architectural, nous pouvons très vite distinguer deux types de composants.
 Redux (cf: suite de l'article) parle de **container component** (ou *smart component*) et de
 **presentational component** (ou *dumb component*)
-Si l'on se rapportait à une architecture MVC plus tradionnelle, 
+Si l'on se rapportait à une architecture _MVC_ plus traditionnelle, 
 le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
 **On sépare donc les composants responsables de la logique métier/orchestration des actions, de ceux reponsables de la vue**
 
 ### Exemple
-Considérons un composant qui affiche une liste de pistes (tracks) provenant d'une api.
+Considérons un composant qui affiche une liste de pistes (_tracks_) provenant d'une api.
 
 Le code ci-dessous est **moyen** 👿, en effet un même composant **ne devrait pas** être responsable à la fois:
 - d'aller chercher les données de l'api et potentiellement les transformer  
@@ -131,9 +131,9 @@ class TrackList extends React.Component {
 }
 ```
 
-Nous pouvons le séparer en 2 composants, le premier étant un component "container" et le deuxieme un component visuel.
+Nous pouvons le séparer en 2 composants, le premier étant un composant "container" et le deuxième un composant visuel.
 
-#### ✔ Container component :
+#### ✔ Composant _Container_:
 
 ```javascript
 // LOgic is here!! 
@@ -157,7 +157,7 @@ class TrackListContainer extends React.Component {
 ```
 
 
-#### ✔ Presentational component : 
+#### ✔ Composant _Presentational_ : 
 ```javascript
 // here is our view
 const TrackList = ({ tracks }) => (
@@ -171,7 +171,7 @@ const TrackList = ({ tracks }) => (
 
 #### DOM Virtuel
 Lorsque nous écrivons un composant React, nous décrivons à quoi l'UI ressemble en fonction des *props*.
-Même si React donne le sentiment au développeur de repeindre entièrement le DOM à chaque "update",
+Même si React donne le sentiment au développeur de repeindre entièrement le DOM à chaque _update_,
 il implémente, en réalité, un **DOM virtuel** qui est une représentation interne
 en javascript du DOM. 
 Voici un schéma illustrant le processus :
@@ -182,7 +182,7 @@ Voici un schéma illustrant le processus :
 
 
 Lorsque le <span style="color: #D32F2F">modèle de données change</span> la méthode *render* du composant renvoie 
-un object correspondant à la représentation interne du DOM virtuel.
+un objet correspondant à la représentation interne du DOM virtuel.
 React compare ensuite ce nouveau DOM virtuel avec le précédent
 (algorithme de diff interne), et met à jour le *vrai DOM* en appliquant un série d’opérations
 optimisées. Ce DOM virtuel permet donc d’optimiser les accès au “vrai DOM”, les modifications sont appliquées
@@ -199,7 +199,7 @@ Les différentes composantes de ce schéma sont expliquées dans la suite de ce 
 <p align="center"><img src="https://www.dropbox.com/s/eoqyq874z957s4i/synoptique.svg?dl=1" width="500"></p>
 <h6 align="center" >Synoptique technique React-Redux</h6>
 
-> Note : Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et patterns (immutabilités, flux unidirectionel etc..)
+> Note : Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et patterns (immutabilités, flux unidirectionnel etc..)
 > et ces principes sous-jacents peuvent parfaitement s'appliquer à d'autres architectures.
 
 
@@ -238,7 +238,7 @@ architecture: des **actions** sont **“dispatchées”** et traitées par le
 conséquence. Ces vues peuvent également de "dispatcher" des
 actions et ainsi de suite.
 
-### Actions et Actions creator
+### Actions et _Actions creators_
 
 Les **actions** sont des paquets de données envoyés au *store*. Elles
 sont la seule source d’information du store. Une action est envoyée au
@@ -278,21 +278,21 @@ paramètre le *state*, une action, et retourne le nouveau *state*.
 (previousState, action) => nextState
 ```
 
-Le reducer est une fonction pure, par conséquent il ne doit **jamais**:
+Le _reducer_ est une fonction pure, par conséquent il ne doit **jamais**:
 
 -   modifier directement ses arguments
 
 -   effectuer des opérations ayant des effets de bord tel que des appels
     à une api
 
--   appeler des fonctions impures telles que Date.now() etc..
+-   appeler des fonctions impures telles que `Date.now()` etc..
 
 Il est uniquement chargé de calculer le *nextState*.
 
-#### ✘ Exemple: un reducer incorrect : Mutation du state INTERDITE
-Le state est muté.
-La propriété du state étant modifiée directment (l.4),
-les composants abonnées à cette partie du state ne se mettrons pas à jour et ignorerons cette modification.
+#### ✘ Exemple: un _reducer_ incorrect : Mutation du _state_ INTERDITE
+Le _state_ est muté.
+La propriété du _state_ étant modifiée directement (l.4),
+les composants abonnées à cette partie du _state_ ne se mettrons pas à jour et ignorerons cette modification.
 
 ```javascript
 function user(state = {}, action) {
@@ -306,7 +306,7 @@ function user(state = {}, action) {
 }
 ```
 
-#### ✔ Exemple Un Reducer correct 
+#### ✔ Exemple Un _Reducer_ correct 
 ```javascript
 function user(state = {}, action) {
   switch (action.type) {
@@ -323,10 +323,10 @@ function user(state = {}, action) {
 
 > Note : On utilise ici l’opérateur **object spread** (**...**),
 > une syntaxe d’ECMAScript 2016, qui permet de copier les propriétés d’un
-> object dans un nouvel object d’une manière plus succincte.
-> Nous pouvons également utiliser des bibliothèques qui garantissent l'immutalibilité telles que *[immutable.js](https://github.com/facebook/immutable-js/)* développée par Facebook.
+> objet dans un nouvel objet d’une manière plus succincte.
+> Nous pouvons également utiliser des bibliothèques qui garantissent l'immutabilité telles que *[immutable.js](https://github.com/facebook/immutable-js/)* développée par Facebook.
 
-<h6>TODO: combineReducer pour réduire le boilerplate</h6>
+<!-- <h6>TODO: combineReducer pour réduire le boilerplate</h6> -->
 
 ### Store
 
@@ -338,15 +338,15 @@ Le **store** est un objet qui:
 
 -   permet de mettre à jour le *state* via `dispatch(action)`
 
--   permet d’abonner des composants via `subscribe(listener)` (composants notifiés lorsque le state subit une modification)
+-   permet d’abonner des composants via `subscribe(listener)` (composants notifiés lorsque le _state_ subit une modification)
 
 ### Async Actions
-Afin d'orchestrer des flux asynchrones (par exemple, les appels réseaux) nous pouvons utiliser le middleware *Redux-thunk*. 
-Ce middleware permet de traiter les **actions** étant des **fonctions** (appelées *thunk action*).
+Afin d'orchestrer des flux asynchrones (par exemple, les appels réseaux) nous pouvons utiliser le _middleware_ *Redux-thunk*. 
+Ce _middleware_ permet de traiter les **actions** étant des **fonctions** (appelées *thunk action*).
 Une action *thunk* ne doit pas forcément être pure et peut avoir des effets
 de bords. Les fonctions *dispatch* et *getState* du store lui sont passé en argument, ce qui lui donne la possibilité de *dispatcher* d'autres *actions* et d'accéder au *state*.
 
-#### Exemple d’un thunk action creator qui retourne une function :
+#### Exemple d’un _thunk action creator_ qui retourne une fonction :
 ```javascript
 function whatIsMyName() {
   return async (dispatch, getState) => {
@@ -387,7 +387,7 @@ Ces deux termes proviennent, en l'occurrence, du créateur de redux.
 ### *Container* composants 
 - Responsables de la manière dont **“les choses” fonctionnent**
 
-- Sont souvent stateful et servent de **sources de données**
+- Sont souvent _stateful_ et servent de **sources de données**
 
 - **“Dispatchent” les actions** flux
 
@@ -412,14 +412,14 @@ Ces deux termes proviennent, en l'occurrence, du créateur de redux.
 
 - **Reçoivent** les **données et les callback** exclusivement via leurs **props**
 
-- Possède uniquement un state si celui-ci concerne l’UI (et non des data)
+- Possède uniquement un _state_ si celui-ci concerne l’UI (et non des data)
 
 - Souvent écrits sous forme de fonctions
 
 Selectors
 -----------
 
-Afin de comprendre l'utilité des selecteurs, prenons un exemple.
+Afin de comprendre l'utilité des sélecteurs, prenons un exemple.
 Considérons une liste de personnes, une recherche (par nom) et des filtres (sexe, age, etc...) sur ces personnes.
 
 En suivant les principes *Redux*, le *store* contient les données et les critères de recherche.
@@ -434,14 +434,14 @@ Les états dérivés (calculés) ne doivent pas être présents dans le *state*.
 
 Le "bon" endroit pour filtrer et afficher cette liste est donc la méthode _render_.
 Ainsi, si  un critère de recherche ou si les données changent,
-le composant execute la méthode `render`, filtre les données et les affiche.
-Il en résulte une UI toujours synchronisée avec le _state_. 
+le composant exécute la méthode `render`, filtre les données et les affiche.
+Il en résulte une _UI_ toujours synchronisée avec le _state_. 
 
 Cette technique présente néanmoins un inconvénient.
 Supposons qu'une _props_ **autre** que les filtres et la liste de personnes, change :
 le filtrage de la liste se fera donc, **inutilement**, à chaque _update_ du composant.
 
-La compléxité de ce filtrage étant du 0(n), cela n'est pas très génant si la taille des données à filter reste modérée. 
+La complexité de ce filtrage étant du 0(n), cela n'est pas très gênant si la taille des données à filtre reste modérée. 
 
 Cependant, des listes de données potentiellement grandes ou même un calcul plus  complexes dégraderaient fortement les performances de l'application.
 
@@ -455,14 +455,14 @@ Enfin ils sont *composables*, c’est à dire qu’ils peuvent être utilisés e
 entrées d'autres *selectors*.
 Ainsi toute la complexité est *déplacée* à l'exterieur et prise en charge par les **selectors**,
 
-Les *selectors* jouent le rôle d'*api*, permettant un accès au state. 
+Les *selectors* jouent le rôle d'*api*, permettant un accès au _state_. 
 Les composants React ne connaisse que cette interface.
-Une conséquence directe est le *découplage* de ces composants vis-à-vis de la *forme* du state. 
+Une conséquence directe est le *découplage* de ces composants vis-à-vis de la *forme* du _state_. 
 Un autre bénéfice est la simplification du code des composants React.
 
 #### Exemple avec la bibliothèque [reselect](https://github.com/reactjs/reselect)
 
-##### Définition des selectors
+##### Définition des _selectors_
 ```javascript
 const getUsers = state => state.users
 const getSearchTerm = state => state.searchTerm
@@ -496,7 +496,7 @@ export default connect(state => (
   filteredUsers: getFilteredUsers(state)
 ))(UserList);
 ```
-> Note : Nous avons seulement besoin de transmettre la liste filtrée au composant UserList.
+> Note : Nous avons seulement besoin de transmettre la liste filtrée au composant _UserList_.
 > `connect` suffit à créer le composant *container*.
 
 > Note 1 : Le pattern *mapStateToProps* étant récurrent, un sucre syntaxique serait :
