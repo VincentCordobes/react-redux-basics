@@ -30,12 +30,12 @@ L'API des composants est très simple. Un composant *peut* posséder :
     **props**
 -   Une méthode **render** chargée du rendu du composant, appelée
     lorsque son *state* ou une de ses *props* changent.
--   Des méthodes liées au cycle de vie du composant _componentDidMount_,
-    _componentWillReceiveProps_ etc..)
+-   Des méthodes liées au **cycle de vie** du composant `componentDidMount`,
+    `componentWillReceiveProps` etc...)
 
 
 #### Écriture avec les classes ES6
-Ci dessous un composant React ayant pour seule vocation d'afficher la propriété *user*.
+Ci-dessous un composant React ayant pour seule vocation d'afficher la propriété *user*.
 Si *user* change, React redessine la partie du composant ayant changé.
 ```javascript
 class Bonjour extends React.Component {
@@ -54,7 +54,7 @@ const Bonjour = (props) => (
 )
 ```
 
-Ce type de composant **ne possède pas de state, pas d'instance ni 
+Ce type de composant **ne possède pas de _state_, pas d'instance ni 
 de méthodes liées au cycle de vie** d'un composant React. Il ne s'agit que d'une
 simple fonction retournant un résultat en fonction de ses arguments (les *props*)
 Cette écriture étant plus concise, elle est à privilégier dans la mesure du possible.
@@ -199,7 +199,7 @@ Les différentes composantes de ce schéma sont expliquées dans la suite de ce 
 <p align="center"><img src="https://www.dropbox.com/s/eoqyq874z957s4i/synoptique.svg?dl=1" width="500"></p>
 <h6 align="center" >Synoptique technique React-Redux</h6>
 
-> Note : Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et patterns (immutabilités, flux unidirectionnel etc..)
+> Note : Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et _patterns_ (immutabilités, flux unidirectionnel etc...)
 > et ces principes sous-jacents peuvent parfaitement s'appliquer à d'autres architectures.
 
 
@@ -208,7 +208,7 @@ Les différentes composantes de ce schéma sont expliquées dans la suite de ce 
 *React* fournit seulement un moyen de dessiner de manière efficace des
 composants en fonction de données d'entrées.
 
-**Flux** est un pattern permettant de gérer **l'état d'une application** qui garanti un flux de données
+**Flux** est un _pattern_ permettant de gérer **l'état d'une application** qui garanti un flux de données
 unidirectionnel (*one way databinding*) **Redux** est l'implémentation
 la plus populaire.
 
@@ -232,7 +232,7 @@ la plus populaire.
 <h6 align="center">Architecture Redux</h6>
 
 Le schéma illustre le flux unidirectionnel des données dans cette
-architecture: des **actions** sont **“dispatchées”** et traitées par le
+architecture : des **actions** sont **“dispatchées”** et traitées par le
 **reducer**, qui se charge de mettre à jour le **store**. Toutes les vues
 (ici les composants react) abonnées au store se mettent à jour en
 conséquence. Ces vues peuvent également de "dispatcher" des
@@ -285,14 +285,14 @@ Le _reducer_ est une fonction pure, par conséquent il ne doit **jamais**:
 -   effectuer des opérations ayant des effets de bord tel que des appels
     à une api
 
--   appeler des fonctions impures telles que `Date.now()` etc..
+-   appeler des fonctions impures telles que `Date.now()` etc...
 
 Il est uniquement chargé de calculer le *nextState*.
 
 #### ✘ Exemple: un _reducer_ incorrect : Mutation du _state_ INTERDITE
 Le _state_ est muté.
 La propriété du _state_ étant modifiée directement (l.4),
-les composants abonnées à cette partie du _state_ ne se mettrons pas à jour et ignorerons cette modification.
+les composants abonnés à cette partie du _state_ ne se mettrons pas à jour et ignorerons cette modification.
 
 ```javascript
 function user(state = {}, action) {
@@ -330,7 +330,7 @@ function user(state = {}, action) {
 
 ### Store
 
-Le **store** est un objet qui:
+Le **store** est un objet qui :
 
 -   maintient le **state** de l'application
 
@@ -423,10 +423,10 @@ Afin de comprendre l'utilité des sélecteurs, prenons un exemple.
 Considérons une liste de personnes, une recherche (par nom) et des filtres (sexe, age, etc...) sur ces personnes.
 
 En suivant les principes *Redux*, le *store* contient les données et les critères de recherche.
-A partir de ces éléments nous pouvons calculer la liste filtrée à afficher. 
+À partir de ces éléments nous pouvons calculer la liste filtrée à afficher. 
 
 Une bonne pratique, concernant le *state*, est de contenir seulement des *donnée minimisée*,
-c'est à dire des données ne pouvant pas être obtenues à partir d'autres données.
+c'est-à-dire des données ne pouvant pas être obtenues à partir d'autres données.
 Les états dérivés (calculés) ne doivent pas être présents dans le *state*.
 
 
@@ -443,7 +443,7 @@ le filtrage de la liste se fera donc, **inutilement**, à chaque _update_ du com
 
 La complexité de ce filtrage étant du 0(n), cela n'est pas très gênant si la taille des données à filtre reste modérée. 
 
-Cependant, des listes de données potentiellement grandes ou même un calcul plus  complexes dégraderaient fortement les performances de l'application.
+Cependant, des listes de données potentiellement grandes ou même un calcul plus  complexe dégraderaient fortement les performances de l'application.
 
 C'est ici qu'entrent en jeu les **selectors**:
 
@@ -451,7 +451,7 @@ C'est ici qu'entrent en jeu les **selectors**:
 
 Les *selectors* **calculent des données dérivées**. Ils permettent au *state* de ne stocker que les **données minimisée**.
 Ils sont **efficaces** et ne sont **pas recalculés** si les arguments restent les mêmes → ils sont **mémoisés**.
-Enfin ils sont *composables*, c'est à dire qu'ils peuvent être utilisés en
+Enfin ils sont *composables*, c'est-à-dire qu'ils peuvent être utilisés en
 entrées d'autres *selectors*.
 Ainsi toute la complexité est *déplacée* à l'exterieur et prise en charge par les **selectors**,
 
@@ -499,7 +499,7 @@ export default connect(state => (
 > Note : Nous avons seulement besoin de transmettre la liste filtrée au composant _UserList_.
 > `connect` suffit à créer le composant *container*.
 
-> Note 1 : Le pattern *mapStateToProps* étant récurrent, un sucre syntaxique serait :
+> Note 1 : Le _pattern_ *mapStateToProps* étant récurrent, un sucre syntaxique serait :
 
 ```javascript
 export default connect(createStructuredSelector({
