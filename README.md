@@ -4,6 +4,8 @@ Draft React-Redux
 React
 ------
 
+### Les bases
+
 React est une bibliothèque javascript permettant
 de **construire des interfaces graphiques composables**. 
 
@@ -89,7 +91,7 @@ React.createElement('Bonjour', {
 });
 ```
 
-#### Distinguer 2 types de composants React
+### Distinguer 2 types de composants React
 
 D'un point de vue architectural, nous pouvons très vite distinguer deux types de composants.
 Redux (cf : suite de l'article) parle de **container component** (ou *smart component*) et de
@@ -98,7 +100,7 @@ Si l'on se rapportait à une architecture _MVC_ plus traditionnelle,
 le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
 **On sépare donc les composants responsables de la logique métier/orchestration des actions, de ceux reponsables de la vue**
 
-### Exemple
+#### Exemple
 Considérons un composant qui affiche une liste de pistes (_tracks_) provenant d'une api.
 
 Le code ci-dessous est **moyen** 👿, en effet un même composant **ne devrait pas** être responsable à la fois :
@@ -107,7 +109,7 @@ Le code ci-dessous est **moyen** 👿, en effet un même composant **ne devrait 
 
 Ce manque de séparation entre la vue et la logique métier peut très vite rendre le code difficile à maintenir lorsque ce dernier grossit.
 
-#### ✘ Un "mauvais" composant :
+##### ✘ Un "mauvais" composant :
 ```javascript
 class TrackList extends React.Component {
   state = { tracks: [] }
@@ -133,7 +135,7 @@ class TrackList extends React.Component {
 
 Nous pouvons le séparer en 2 composants, le premier étant un composant "container" et le deuxième un composant visuel.
 
-#### ✔ Composant _Container_ :
+##### ✔ Composant _Container_ :
 
 ```javascript
 // LOgic is here!! 
@@ -157,7 +159,7 @@ class TrackListContainer extends React.Component {
 ```
 
 
-#### ✔ Composant _Presentational_ : 
+##### ✔ Composant _Presentational_ : 
 ```javascript
 // here is our view
 const TrackList = ({ tracks }) => (
@@ -169,7 +171,7 @@ const TrackList = ({ tracks }) => (
 )
 ```
 
-#### DOM Virtuel
+### DOM Virtuel
 Lorsque nous écrivons un composant React, nous décrivons à quoi l'UI ressemble en fonction des *props*.
 Même si React donne le sentiment au développeur de repeindre entièrement le DOM à chaque _update_,
 il implémente, en réalité, un **DOM virtuel** qui est une représentation interne
