@@ -26,7 +26,7 @@ C'est d'ailleurs une des 2 manières possibles d'écrire une composant React.
 
 L'API des composants est très simple. Un composant *peut* posséder :
 -   un **state**
--   des propriétés: les données d'entrées du composant →
+-   des propriétés : les données d'entrées du composant →
     **props**
 -   Une méthode **render** chargée du rendu du composant, appelée
     lorsque son *state* ou une de ses *props* changent.
@@ -35,7 +35,7 @@ L'API des composants est très simple. Un composant *peut* posséder :
 
 
 #### Écriture avec les classes ES6
-Ci dessous un composant React ayant pour seule vocation à afficher la propriété *user*.
+Ci dessous un composant React ayant pour seule vocation d'afficher la propriété *user*.
 Si *user* change, React redessine la partie du composant ayant changé.
 ```javascript
 class Bonjour extends React.Component {
@@ -92,7 +92,7 @@ React.createElement('Bonjour', {
 #### Distinguer 2 types de composants React
 
 D'un point de vue architectural, nous pouvons très vite distinguer deux types de composants.
-Redux (cf: suite de l'article) parle de **container component** (ou *smart component*) et de
+Redux (cf : suite de l'article) parle de **container component** (ou *smart component*) et de
 **presentational component** (ou *dumb component*)
 Si l'on se rapportait à une architecture _MVC_ plus traditionnelle, 
 le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
@@ -101,7 +101,7 @@ le premier correspondrait au **C**ontrolleur et le deuxième à la **V**ue.
 ### Exemple
 Considérons un composant qui affiche une liste de pistes (_tracks_) provenant d'une api.
 
-Le code ci-dessous est **moyen** 👿, en effet un même composant **ne devrait pas** être responsable à la fois:
+Le code ci-dessous est **moyen** 👿, en effet un même composant **ne devrait pas** être responsable à la fois :
 - d'aller chercher les données de l'api et potentiellement les transformer  
 - d'afficher et mettre en forme ces données 
 
@@ -133,7 +133,7 @@ class TrackList extends React.Component {
 
 Nous pouvons le séparer en 2 composants, le premier étant un composant "container" et le deuxième un composant visuel.
 
-#### ✔ Composant _Container_:
+#### ✔ Composant _Container_ :
 
 ```javascript
 // LOgic is here!! 
@@ -344,7 +344,7 @@ Le **store** est un objet qui:
 Afin d'orchestrer des flux asynchrones (par exemple, les appels réseaux) nous pouvons utiliser le _middleware_ *Redux-thunk*. 
 Ce _middleware_ permet de traiter les **actions** étant des **fonctions** (appelées *thunk action*).
 Une action *thunk* ne doit pas forcément être pure et peut avoir des effets
-de bords. Les fonctions *dispatch* et *getState* du store lui sont passé en argument, ce qui lui donne la possibilité de *dispatcher* d'autres *actions* et d'accéder au *state*.
+de bords. Les fonctions *dispatch* et *getState* du store lui sont passées en argument, ce qui lui donne la possibilité de *dispatcher* d'autres *actions* et d'accéder au *state*.
 
 #### Exemple d'un _thunk action creator_ qui retourne une fonction :
 ```javascript
@@ -412,7 +412,7 @@ Ces deux termes proviennent, en l'occurrence, du créateur de redux.
 
 - **Reçoivent** les **données et les callback** exclusivement via leurs **props**
 
-- Possède uniquement un _state_ si celui-ci concerne l'UI (et non des data)
+- Possèdent uniquement un _state_ si celui-ci concerne l'UI (et non des data)
 
 - Souvent écrits sous forme de fonctions
 
