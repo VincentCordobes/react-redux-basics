@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="213px" height="221px" viewBox="0 0 213 221" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>drawing</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="43.5" cy="43.5" rx="43.5" ry="43.5"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="87" height="87" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="0" y="0" width="213" height="99"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="213" height="99" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="0" y="0" width="200" height="69"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="200" height="69" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="0" y="0" width="50" height="17"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="17" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <rect id="path-9" x="0" y="0" width="188" height="20"></rect>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="188" height="20" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <rect id="path-11" x="0" y="0" width="188" height="20"></rect>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="188" height="20" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+    </defs>
+    <g id="selectors-copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A4" transform="translate(-205.000000, -131.000000)">
+            <g id="drawing" transform="translate(205.000000, 131.000000)">
+                <g id="store" transform="translate(54.000000, 0.000000)">
+                    <use id="Oval" stroke="#A1887F" mask="url(#mask-2)" fill="#D7CCC8" xlink:href="#path-1"></use>
+                    <text id="State" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#4E342E">
+                        <tspan x="16" y="34">State</tspan>
+                    </text>
+                    <polygon id="path4934" stroke="#6D4C41" stroke-width="0.71788645" stroke-dasharray="2.87154567,5.74309135" points="56.7054447 70.1980731 38.1644256 75.58411 27 60.6288679 38.6410283 46 57 51.914085"></polygon>
+                    <polygon id="path4934-copy" stroke="#6D4C41" stroke-width="0.71788645" stroke-dasharray="2.87154567,5.74309135" points="78.7643558 46.8126559 63.9315405 51 55 39.3731311 64.3128226 28 79 32.5978721"></polygon>
+                </g>
+                <g id="state-selectors" transform="translate(98.000000, 45.000000)" stroke="#96837E" stroke-linecap="square" stroke-dasharray="1,1">
+                    <path d="M1.5,20.5 L1.5,69.5" id="Line"></path>
+                    <path id="Line-decoration-1" d="M-1.5,58.7 L1.5,69.5 L4.5,58.7"></path>
+                    <path d="M25.5,0.5 L12.5,66.5" id="Line"></path>
+                    <path id="Line-decoration-1" d="M11.6437251,55.3238292 L12.5,66.5 L17.5306148,56.4833681"></path>
+                </g>
+                <g id="component" transform="translate(0.000000, 122.000000)">
+                    <use id="Rectangle" stroke="#BDBDBD" mask="url(#mask-4)" fill="#FFFFFF" xlink:href="#path-3"></use>
+                    <text id="Component" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#565656">
+                        <tspan x="8" y="15">Component</tspan>
+                    </text>
+                </g>
+                <g id="render" transform="translate(7.000000, 146.000000)">
+                    <use id="Rectangle-2" stroke="#C0CA33" mask="url(#mask-6)" fill="#DCE775" xlink:href="#path-5"></use>
+                    <text id="Render" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#616161">
+                        <tspan x="82.54" y="13">Render</tspan>
+                    </text>
+                </g>
+                <g id="props" transform="translate(82.000000, 114.000000)">
+                    <use id="Rectangle-2" stroke="#FFD84F" mask="url(#mask-8)" fill="#FFEDA7" xlink:href="#path-7"></use>
+                    <text id="Props" font-family="CMUSansSerif, CMU Sans Serif" font-size="10" font-weight="400" fill="#FF8F00">
+                        <tspan x="13.467093" y="11">Props</tspan>
+                    </text>
+                </g>
+                <g id="computation" transform="translate(13.000000, 167.000000)">
+                    <use id="Rectangle-7-Copy" stroke="#AD1457" mask="url(#mask-10)" fill="#F48FB1" xlink:href="#path-9"></use>
+                    <text id="filteredData-=-data." font-family="CMUSansSerif, CMU Sans Serif" font-size="10" font-weight="400" fill="#880E4F">
+                        <tspan x="19.5097847" y="12">filteredData = data.filter(company)</tspan>
+                    </text>
+                </g>
+                <g id="return" transform="translate(13.000000, 192.000000)">
+                    <use id="Rectangle-3" stroke="#92851B" mask="url(#mask-12)" stroke-dasharray="2,1" fill="#F0F4C3" xlink:href="#path-11"></use>
+                    <text id="return-(filteredData" font-family="CMUSansSerif, CMU Sans Serif" font-size="10" font-weight="400" fill="#558B2F">
+                        <tspan x="51.2047847" y="12">return (filteredData)</tspan>
+                    </text>
+                </g>
+                <text id="connect" font-family="CMUSansSerif, CMU Sans Serif" font-size="9" font-weight="400" fill="#565656">
+                    <tspan x="124" y="96">connect</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

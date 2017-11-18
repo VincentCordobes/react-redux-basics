@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="635px" height="117px" viewBox="0 0 635 117" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>flux</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flux" transform="translate(0.000000, 1.000000)">
+            <g id="Page-1">
+                <g id="flux">
+                    <g id="Page-1">
+                        <g id="flux">
+                            <g id="layer1">
+                                <rect id="rect4136" stroke="#5A8A39" stroke-width="0.7" fill="#B7D6A3" x="517.96185" y="70.07648" width="116.03819" height="45.128204"></rect>
+                                <text id="View" fill="#33691E" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                                    <tspan x="561.43604" y="97.49432">View</tspan>
+                                </text>
+                                <rect id="rect4142" stroke="#9FA8DA" stroke-width="0.7" fill="#E8EAF6" x="345.59363" y="70.07648" width="116.03819" height="45.128204"></rect>
+                                <text id="Store" fill="#3949AB" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                                    <tspan x="387.59805" y="97.59058">Store</tspan>
+                                </text>
+                                <rect id="rect4144" stroke="#C2185B" stroke-width="0.7" fill="#F8BBD0" x="173.22539" y="70.07648" width="116.03819" height="45.128204"></rect>
+                                <text id="Reducer" fill="#880E4F" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                                    <tspan x="204.48795" y="97.49432">Reducer</tspan>
+                                </text>
+                                <rect id="rect4154" stroke="#FFD84F" stroke-width="0.7" fill="#FFEDA7" x="0.85717" y="70.07648" width="116.03819" height="45.128204"></rect>
+                                <text id="Actions" fill="#000000" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                                    <tspan x="36.154823" y="97.49432">Actions</tspan>
+                                </text>
+                                <rect id="rect4164" stroke="#FFD84F" stroke-width="0.7" fill="#FFEDA7" transform="translate(403.613020, 22.640582) scale(-1, 1) translate(-403.613020, -22.640582) " x="345.59402" y="0.07648" width="116.038" height="45.128204"></rect>
+                                <text id="Actions" fill="#000000" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                                    <tspan x="380.89151" y="27.49432">Actions</tspan>
+                                </text>
+                                <path d="M116.89536,92.64058 L173.22539,92.64058" id="path4184" stroke="#000000"></path>
+                                <path id="path4184-decoration-1" d="M162.42539,95.64058 L173.22539,92.64058 L162.42539,89.64058" stroke="#000000"></path>
+                                <path d="M289.26358,92.64058 L345.59363,92.64058" id="path4186" stroke="#000000"></path>
+                                <path id="path4186-decoration-1" d="M334.79363,95.64058 L345.59363,92.64058 L334.79363,89.64058" stroke="#000000"></path>
+                                <path d="M461.63182,92.64058 L517.96185,92.64058" id="path4188" stroke="#000000"></path>
+                                <path id="path4188-decoration-1" d="M507.16185,95.64058 L517.96185,92.64058 L507.16185,89.64058" stroke="#000000"></path>
+                                <polyline id="path4190" stroke="#000000" points="575.98095 70.07648 575.98095 22.64058 461.63202 22.64058"></polyline>
+                                <path id="path4190-decoration-1" d="M472.43202,19.64058 L461.63202,22.64058 L472.43202,25.64058" stroke="#000000"></path>
+                                <polyline id="path4192" stroke="#000000" points="345.59402 22.64058 231.24448 22.64058 231.24448 70.07648"></polyline>
+                                <path id="path4192-decoration-1" d="M228.24448,59.27648 L231.24448,70.07648 L234.24448,59.27648" stroke="#000000"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

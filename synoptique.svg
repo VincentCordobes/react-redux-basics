@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="371px" height="277px" viewBox="0 0 371 277" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>drawing</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="118" height="57"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="118" height="57" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="0" y="0" width="118" height="57"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="118" height="57" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="0" y="0" width="63" height="18"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="63" height="18" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <path d="M69.923456,39.9193548 C68.7227552,42.7565438 53.5458996,45 35,45 C16.4541004,45 1.27724483,42.7565438 0.0765439611,39.9193548 L0,39.9193548 L0,5.08064516 L70,5.08064516 L70,39.9193548 L69.923456,39.9193548 Z" id="path-7"></path>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="39.9193548" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <ellipse id="path-9" cx="35" cy="5.44354839" rx="35" ry="5.44354839"></ellipse>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="70" height="10.8870968" fill="white">
+            <use xlink:href="#path-9"></use>
+        </mask>
+        <rect id="path-11" x="0" y="36" width="78" height="27"></rect>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="78" height="27" fill="white">
+            <use xlink:href="#path-11"></use>
+        </mask>
+        <rect id="path-13" x="0" y="0" width="27" height="79"></rect>
+        <mask id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="27" height="79" fill="white">
+            <use xlink:href="#path-13"></use>
+        </mask>
+        <rect id="path-15" x="10" y="36" width="49" height="19"></rect>
+        <mask id="mask-16" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="49" height="19" fill="white">
+            <use xlink:href="#path-15"></use>
+        </mask>
+        <rect id="path-17" x="0" y="10" width="213" height="71"></rect>
+        <mask id="mask-18" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="213" height="71" fill="white">
+            <use xlink:href="#path-17"></use>
+        </mask>
+        <rect id="path-19" x="154" y="0" width="50" height="19"></rect>
+        <mask id="mask-20" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="50" height="19" fill="white">
+            <use xlink:href="#path-19"></use>
+        </mask>
+        <rect id="path-21" x="7" y="39" width="200" height="38"></rect>
+        <mask id="mask-22" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="200" height="38" fill="white">
+            <use xlink:href="#path-21"></use>
+        </mask>
+    </defs>
+    <g id="redux-copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A4" transform="translate(-93.000000, -144.000000)">
+            <g id="drawing" transform="translate(93.000000, 145.000000)">
+                <g id="dumb-components" transform="translate(165.000000, 209.000000)">
+                    <g id="Group-2" transform="translate(5.000000, 10.000000)" stroke="#FFD84F" fill="#FFEDA7">
+                        <use id="Rectangle-3" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Group-2" transform="translate(0.000000, 5.000000)">
+                        <use id="Rectangle-3" stroke="#FFD84F" mask="url(#mask-4)" fill="#FFEDA7" xlink:href="#path-3"></use>
+                        <text id="Presentational-Compo" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#5B5B5B">
+                            <tspan x="11" y="32">Presentational </tspan>
+                            <tspan x="11" y="46">Components</tspan>
+                        </text>
+                    </g>
+                    <g id="Group" transform="translate(22.000000, 0.000000)">
+                        <use id="Rectangle-2" stroke="#CDDC39" mask="url(#mask-6)" fill="#E6EE9C" xlink:href="#path-5"></use>
+                        <text id="Props" font-family="CMUSansSerif, CMU Sans Serif" font-size="10" font-weight="400" fill="#A3A73E">
+                            <tspan x="15" y="12">Props</tspan>
+                        </text>
+                    </g>
+                </g>
+                <text id="connect" font-family="CMUSansSerif, CMU Sans Serif" font-size="9" font-weight="400" fill="#00897B">
+                    <tspan x="300" y="77">connect</tspan>
+                </text>
+                <path d="M294.5,64.5 L294.5,92.5" id="selector-container" stroke="#00897B" stroke-linecap="square" stroke-dasharray="1,1"></path>
+                <path id="selector-container-decoration-1" d="M291.5,81.7 L294.5,92.5 L297.5,81.7" stroke="#00897B" stroke-linecap="square" stroke-dasharray="1,1"></path>
+                <g id="store" transform="translate(105.000000, 0.000000)">
+                    <g id="Group-3" transform="translate(36.000000, 24.000000)" stroke="#A1887F" fill="#D7CCC8">
+                        <use id="Combined-Shape" mask="url(#mask-8)" xlink:href="#path-7"></use>
+                        <use id="Oval-2" mask="url(#mask-10)" xlink:href="#path-9"></use>
+                    </g>
+                    <text id="State" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#4E342E">
+                        <tspan x="58" y="54">State</tspan>
+                    </text>
+                    <rect id="Rectangle-4" stroke="#979797" stroke-width="0.7" stroke-dasharray="5,5" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="121" height="79"></rect>
+                    <text id="Store" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#565656">
+                        <tspan x="6" y="16">Store</tspan>
+                    </text>
+                </g>
+                <g id="state-selectors" transform="translate(201.000000, 48.000000)" stroke="#96837E" stroke-linecap="square" stroke-dasharray="1,1">
+                    <path d="M0.5,1.75 L59.5,1.75" id="Line"></path>
+                    <path id="Line-decoration-1" d="M48.7,4.75 L59.5,1.75 L48.7,-1.25"></path>
+                </g>
+                <g id="selectors" transform="translate(261.000000, 0.000000)">
+                    <use id="Rectangle-7" stroke="#80CBC4" mask="url(#mask-12)" fill="#E0F2F1" xlink:href="#path-11"></use>
+                    <text id="Selectors" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#00897B">
+                        <tspan x="17" y="52">Selectors</tspan>
+                    </text>
+                    <text id="Compute-derived-data" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#565656">
+                        <tspan x="0" y="11">Compute derived data </tspan>
+                        <tspan x="0" y="25">from state</tspan>
+                    </text>
+                </g>
+                <g id="reducer" transform="translate(35.000000, 0.000000)">
+                    <use id="Rectangle-5" stroke="#4FC3F7" mask="url(#mask-14)" fill="#B3E5FC" xlink:href="#path-13"></use>
+                    <text id="Reducers" transform="translate(13.000000, 39.500000) rotate(-270.000000) translate(-13.000000, -39.500000) " font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#0277BD">
+                        <tspan x="-9.422" y="43.5">Reducers</tspan>
+                    </text>
+                </g>
+                <g id="container-reducer" transform="translate(0.000000, 83.000000)">
+                    <polyline id="Line" stroke="#AD1457" stroke-linecap="square" points="46 0 46 46.8623047 109 46.8623047"></polyline>
+                    <path id="Line-decoration-1" d="M43,10.8 L46,0 L49,10.8" stroke="#AD1457" stroke-linecap="square"></path>
+                    <rect id="Rectangle-6" fill="#FFFFFF" x="0" y="61" width="101" height="14"></rect>
+                    <text id="dispatch" font-family="CMUSansSerif, CMU Sans Serif" font-size="9" font-weight="400" fill="#880E4F">
+                        <tspan x="65" y="41">dispatch</tspan>
+                    </text>
+                    <use id="Rectangle-7-Copy" stroke="#AD1457" mask="url(#mask-16)" fill="#F0B9D1" xlink:href="#path-15"></use>
+                    <text id="Actions" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#880E4F">
+                        <tspan x="15.502" y="50">Actions</tspan>
+                    </text>
+                </g>
+                <g id="container-pres" transform="translate(213.000000, 174.000000)">
+                    <text id="data-&amp;-callback-func" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#565656">
+                        <tspan x="14" y="20">data &amp; callback functions</tspan>
+                    </text>
+                    <path d="M1.5,0.5 L1.5,32.5" id="Line" stroke="#676767" stroke-linecap="square"></path>
+                    <path id="Line-decoration-1" d="M-1.5,21.7 L1.5,32.5 L4.5,21.7" stroke="#676767" stroke-linecap="square"></path>
+                </g>
+                <g id="reducer-state" transform="translate(62.000000, 32.000000)">
+                    <rect id="Rectangle-9" fill="#FFFFFF" x="21" y="0" width="33" height="18"></rect>
+                    <path d="M0.5,17.5 L75.4658959,17.5" id="Line" stroke="#29B6F6" stroke-linecap="square"></path>
+                    <path id="Line-decoration-1" d="M64.6658959,20.5 L75.4658959,17.5 L64.6658959,14.5" stroke="#29B6F6" stroke-linecap="square"></path>
+                    <text id="Update-the-state" font-family="CMUSansSerif, CMU Sans Serif" font-size="9" font-weight="400" fill="#0277BD">
+                        <tspan x="5" y="12">Update the state</tspan>
+                    </text>
+                </g>
+                <g id="container" transform="translate(112.000000, 93.000000)">
+                    <use id="Rectangle" stroke="#BDBDBD" mask="url(#mask-18)" fill="#FAF9F9" xlink:href="#path-17"></use>
+                    <use id="Rectangle-2" stroke="#BDBDBD" mask="url(#mask-20)" fill="#FFFFFF" xlink:href="#path-19"></use>
+                    <text id="Props" font-family="CMUSansSerif, CMU Sans Serif" font-size="10" font-weight="400" fill="#565656">
+                        <tspan x="166" y="12">Props</tspan>
+                    </text>
+                    <text id="Container-components" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#565656">
+                        <tspan x="9" y="28">Container components</tspan>
+                    </text>
+                    <use id="Rectangle-2" stroke="#BDBDBD" mask="url(#mask-22)" stroke-dasharray="3,1" fill="#FFFFFF" xlink:href="#path-21"></use>
+                    <text id="Lifecycle-hooks" font-family="CMUSansSerif, CMU Sans Serif" font-size="12" font-weight="400" fill="#565656">
+                        <tspan x="15" y="54">Lifecycle hooks</tspan>
+                    </text>
+                    <text id="ex:-ComponentWillMou" font-family="CMUSansSerif, CMU Sans Serif" font-size="9" font-weight="400" fill="#A0A0A0">
+                        <tspan x="20" y="66">ex: ComponentWillMount = () =&gt; fetchData()</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

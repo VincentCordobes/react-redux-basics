@@ -198,7 +198,7 @@ Architecture Flux : Redux
 Voici un schéma illustrant l'architecture d'une application redux.
 Les différentes composantes de ce schéma sont expliquées dans la suite de ce document.
 
-<p align="center"><img src="https://www.dropbox.com/s/eoqyq874z957s4i/synoptique.svg?dl=1" width="500"></p>
+<p align="center"><img src="./synoptique.svg" width="500"></p>
 <h6 align="center" >Synoptique technique React-Redux</h6>
 
 > Note : Redux est une bibliothèque dogmatique mettant en scène plusieurs concepts et _patterns_ (immutabilités, flux unidirectionnel etc...)
@@ -230,7 +230,7 @@ la plus populaire.
     appelées **reducers**
 
 
-<p align="center"><img src="https://www.dropbox.com/s/yst3zq1o0uxtas7/flux.svg?dl=1" width="540"></p>
+<p align="center"><img src="./flux.svg" width="540"></p>
 <h6 align="center">Architecture Redux</h6>
 
 Le schéma illustre le flux unidirectionnel des données dans cette
@@ -432,7 +432,7 @@ c'est-à-dire des données ne pouvant pas être obtenues à partir d'autres donn
 Les états dérivés (calculés) ne doivent pas être présents dans le *state*.
 
 
-<p align="center"><img src="https://www.dropbox.com/s/aj8zj878ivnf7n6/selectors0.svg?dl=1" width="260"></p>
+<p align="center"><img src="./selectors0.svg" width="260"></p>
 
 Le "bon" endroit pour filtrer et afficher cette liste est donc la méthode _render_.
 Ainsi, si  un critère de recherche ou si les données changent,
@@ -449,7 +449,7 @@ Cependant, des listes de données potentiellement grandes ou même un calcul plu
 
 C'est ici qu'entrent en jeu les **selectors**:
 
-<p align="center"><img src="https://www.dropbox.com/s/7gxp1rrntx2lhmj/selectors.svg?dl=1" width="300"></p>
+<p align="center"><img src="./selectors.svg" width="300"></p>
 
 Les *selectors* **calculent des données dérivées**. Ils permettent au *state* de ne stocker que les **données minimisée**.
 Ils sont **efficaces** et ne sont **pas recalculés** si les arguments restent les mêmes → ils sont **mémoisés**.
