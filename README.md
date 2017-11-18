@@ -72,7 +72,7 @@ ReactDOM.render(
 ```
 Pour dessiner le composant dans le DOM il suffit d'appeler
 la méthode `ReactDOM.render` avec ledit Composant et le nœud du DOM où
-l'on souhaite le dessiner
+l'on souhaite le dessiner.
 
 #### JSX
 
@@ -179,7 +179,7 @@ en javascript du DOM.
 Voici un schéma illustrant le processus :
 
 
-<p align="center" ><img src="https://www.dropbox.com/s/ovawut1f5t6yfae/react_batch.svg?dl=1" width="600"></p>
+<p align="center" ><img src="./react_batch.svg" width="600"></p>
 <h6 align="center" >React et son DOM virtuel</h6>
 
 

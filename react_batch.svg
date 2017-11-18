@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="670px" height="372px" viewBox="0 0 670 372" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>react_batch</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="react_batch">
+            <g id="layer1">
+                <path d="M422.9939,228.28457 L464.81027,201.23586" id="path4270" stroke="#000000"></path>
+                <circle id="use4384" fill="#F3F6FC" cx="356.41953" cy="271.34787" r="79.289055"></circle>
+                <circle id="path4200" fill="#F3F6FC" cx="357.08725" cy="80.07768" r="79.289055"></circle>
+                <path d="M348.56913,27.783976 L336.17211,49.07871" id="path4324" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M322.4327,71.52975 L311.07582,89.22562" id="path4328" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M363.75214,27.783976 L380.89608,50.03783" id="path4330" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M335.6876,71.52975 L346.17168,90.98065" id="path4332" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M352.39006,113.43169 L352.66481,131.81247" id="path4334" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M344.46915,216.09889 L332.69833,235.39362" id="path4336" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M307.28895,275.54053 L318.64583,257.84465" id="path4338" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M360.37026,216.09889 L376.7042,236.35275" id="path4340" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M349.153,299.7466 L350.32808,318.12738" id="path4342" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M331.90073,257.84465 L342.38479,277.29556" id="path4344" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M46.535122,120.27317 L73.6993,130.33693" id="path4366" stroke="#FFCC80" fill="#FB8C00"></path>
+                <path d="M75.83247,143.58662 L51.351311,163.14418" id="path4368" stroke="#FFCC80" fill="#FB8C00"></path>
+                <path d="M98.41698,141.68231 L115.83822,151.33172" id="path4370" stroke="#FFCC80" fill="#FB8C00"></path>
+                <path d="M54.049166,174.42758 L80.14528,179.84391" id="path4372" stroke="#FFCC80" fill="#FB8C00"></path>
+                <circle id="path4136" stroke="#FFCC80" fill="#FFE0B2" cx="33.747074" cy="115.53546" r="13.637531"></circle>
+                <circle id="circle4162" stroke="#B71C1C" fill="#F44336" cx="94.98113" cy="182.92314" r="15.152287"></circle>
+                <circle id="use4146" stroke="#FFCC80" fill="#FFE0B2" cx="86.48735" cy="135.07463" r="13.637531"></circle>
+                <circle id="use4158" stroke="#FFCC80" fill="#FFE0B2" cx="40.696434" cy="171.65617" r="13.637531"></circle>
+                <circle id="use4160" stroke="#FFCC80" fill="#FFE0B2" cx="127.76785" cy="157.93939" r="13.637531"></circle>
+                <rect id="rect4172" stroke="#9FA8DA" fill="#C5CAE9" x="340.63046" y="5.332939" width="28.94751" height="22.451036"></rect>
+                <rect id="use4174" stroke="#9FA8DA" fill="#C5CAE9" x="315.16327" y="49.07871" width="28.94751" height="22.451036"></rect>
+                <rect id="use4176" stroke="#9FA8DA" fill="#C5CAE9" x="375.07025" y="50.03783" width="28.94751" height="22.451036"></rect>
+                <rect id="use4178" stroke="#9FA8DA" fill="#C5CAE9" x="337.7485" y="90.98065" width="28.94751" height="22.451036"></rect>
+                <rect id="use4180" stroke="#9FA8DA" fill="#C5CAE9" x="289.39774" y="89.22562" width="28.94751" height="22.451036"></rect>
+                <rect id="use4182" stroke="#9FA8DA" fill="#C5CAE9" x="338.35886" y="131.81247" width="28.94751" height="22.451036"></rect>
+                <rect id="use4344" stroke="#9FA8DA" fill="#C5CAE9" x="336.84357" y="193.64786" width="28.94751" height="22.451036"></rect>
+                <rect id="use4346" stroke="#9FA8DA" fill="#C5CAE9" x="311.3764" y="235.39362" width="28.94751" height="22.451036"></rect>
+                <rect id="use4348" stroke="#9FA8DA" fill="#C5CAE9" x="371.28339" y="236.35275" width="28.94751" height="22.451036"></rect>
+                <rect id="use4350" stroke="#9FA8DA" fill="#C5CAE9" x="333.96161" y="277.29556" width="28.94751" height="22.451036"></rect>
+                <rect id="use4352" stroke="#D32F2F" fill="#E57373" x="285.61087" y="275.54053" width="28.94751" height="22.451036"></rect>
+                <rect id="use4354" stroke="#9FA8DA" fill="#C5CAE9" x="336.57196" y="318.12738" width="28.94751" height="22.451036"></rect>
+                <rect id="use4356" stroke="#9FA8DA" fill="#C5CAE9" x="605.71265" y="112.1232" width="28.94751" height="22.451036"></rect>
+                <rect id="use4358" stroke="#9FA8DA" fill="#C5CAE9" x="580.24548" y="155.86897" width="28.94751" height="22.451036"></rect>
+                <rect id="use4360" stroke="#9FA8DA" fill="#C5CAE9" x="640.15247" y="156.82809" width="28.94751" height="22.451036"></rect>
+                <rect id="use4362" stroke="#9FA8DA" fill="#C5CAE9" x="602.83069" y="197.77092" width="28.94751" height="22.451036"></rect>
+                <rect id="use4364" stroke="#26A69A" fill="#80CBC4" x="554.47998" y="196.01588" width="28.94751" height="22.451036"></rect>
+                <rect id="use4366" stroke="#9FA8DA" fill="#C5CAE9" x="605.44104" y="238.60272" width="28.94751" height="22.451036"></rect>
+                <text id="tspan4382" fill="#000000" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                    <tspan x="306.64828" y="370.47458">Virtual DOM</tspan>
+                </text>
+                <path d="M11.499321,94.92827 L374.51432,192.4397" id="path4386" stroke="#C5CAE9" fill="#C5CAE9"></path>
+                <path d="M0.959097,166.08372 L306.05237,335.60638" id="path4388" stroke="#C5CAE9" fill="#C5CAE9"></path>
+                <path d="M7.160004,111.22435 L326.1372,5.407898" id="path4404" stroke="#C5CAE9" fill="#C5CAE9"></path>
+                <path d="M34.580544,208.47206 L351.30791,158.03877" id="path4406" stroke="#C5CAE9" fill="#C5CAE9"></path>
+                <rect id="rect4429" stroke="#757575" fill="#E0E0E0" x="464.81027" y="177.09261" width="34.839375" height="25.750843"></rect>
+                <path d="M416.66522,132.3943 L467.56748,177.09261" id="path4431" stroke="#000000"></path>
+                <text id="tspan4709" fill="#000000" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                    <tspan x="429.97089" y="190.72542">Diff</tspan>
+                </text>
+                <path d="M628.83433,134.57424 L645.97829,156.82809" id="path4725" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M618.02208,220.22196 L619.19715,238.60272" id="path4729" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M499.64965,193.43763 L554.47998,204.35856" id="path4783" stroke="#000000"></path>
+                <text id="tspan4791" fill="#000000" font-family="Helvetica-Light, Helvetica" font-size="13.75" font-weight="300">
+                    <tspan x="507.98083" y="189.21066">Patch</tspan>
+                </text>
+                <path d="M613.65132,134.57424 L601.25432,155.86897" id="path4346" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M587.51492,178.32001 L576.15805,196.01588" id="path4348" stroke="#9FA8DA" fill="#9FA8DA"></path>
+                <path d="M600.76981,178.32001 L611.25387,197.77092" id="path4350" stroke="#9FA8DA" fill="#9FA8DA"></path>
+            </g>
+        </g>
+    </g>
+</svg>
